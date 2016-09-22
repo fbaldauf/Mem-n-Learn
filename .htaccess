@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule ^src/php/.*$ index.php
+RewriteRule ^data/.*$ index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [QSA,L]

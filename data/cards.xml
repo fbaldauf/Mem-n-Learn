@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cards>
+	<card>
+		<image>Auto.png</image>
+		<translations>
+			<german>Auto</german>
+			<english>Car</english>
+		</translations>
+	</card>
+</cards>
