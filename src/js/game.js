@@ -5,7 +5,7 @@ var game = {
 	cardContainer: '',
 	board: '',
 	turn: 0,
-	openCards: 0,
+	openCards: [],
 	defaultCard: ''
     },
     init: function(settings) {
@@ -20,7 +20,7 @@ var game = {
 	// Standardwerte mit Parametern überschreiben
 	$.extend(game.data, settings);
 
-	game.data.openCards = 0;
+	game.data.openCards = [];
 	game.data.turn = 0;
 
 	game.addCards();
@@ -44,9 +44,18 @@ var game = {
     flipCard: function(event) {
 	var flip = $(event.currentTarget).data("flip-model");
 
-	if (!flip.isFlipped && game.data.openCards < 2) {
-	    game.data.openCards++;
+	if (!flip.isFlipped && game.data.openCards.length < 2) {
+	    game.data.openCards.push($(event.currentTarget));
 	    $(event.currentTarget).flip(true);
+
+	    if (game.data.openCards.length > 1) {
+		setTimeout(function() {
+		    $.each(game.data.openCards, function(key, value) {
+			value.flip(false);
+			game.data.openCards = [];
+		    });
+		}, 3000);
+	    }
 	}
 
     }
