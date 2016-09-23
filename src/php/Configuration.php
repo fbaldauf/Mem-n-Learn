@@ -1,17 +1,16 @@
 <?php
 class Configuration {
-	private $language = '';
-
+	private $language = 'english';
 	public function getLanguage() {
 		return $this->language;
 	}
-
 	public function setLanguage($l) {
-		$this->language = (is_string($l) ? $l : 'english');
-		//die('Sprache ist jetzt: ' . $this->language);
+		$this->language = (is_string ( $l ) ? $l : 'english');
+		// die('Sprache ist jetzt: ' . $this->language);
 	}
-
 	public function __sleep() {
-		return ['language'];
+		return [
+				'language'
+		];
 	}
 }
