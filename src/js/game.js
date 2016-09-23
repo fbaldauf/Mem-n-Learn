@@ -6,7 +6,8 @@ var game = {
 		board : '',
 		turn : 0,
 		openCards : [],
-		defaultCard : ''
+		defaultCard : '',
+		language : ''
 	},
 	init : function(settings) {
 
@@ -59,7 +60,7 @@ var game = {
 	flipCard : function(event) {
 		var tile = $(event.currentTarget);
 		var data = tile.data('tile');
-		console.log(data);
+		console.log(data.card.id);
 
 		var flip = tile.data("flip-model");
 
@@ -79,7 +80,6 @@ var game = {
 					tile.on('flip:done', {
 						obj : game.data.openCards[0]
 					}, function(event) {
-						console.log(event.data);
 						game.setItemCompleted($(this));
 						game.setItemCompleted(event.data.obj);
 					});
@@ -94,6 +94,11 @@ var game = {
 					}, 1000);
 				}
 			}
+
+			var audiofile = 'data/audio/' + game.data.language + '/'
+					+ data.card.word + '.mp3';
+			var audio = new Audio(audiofile);
+			audio.play();
 
 			tile.flip(true);
 		}

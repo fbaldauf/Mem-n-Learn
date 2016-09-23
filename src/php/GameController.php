@@ -16,7 +16,8 @@ class GameController extends AppController {
 				'view' => $this->renderView (),
 				'cards' => $this->getCards (),
 				'cardContainer' => $cardContainer->loadTemplate (),
-				'defaultCard' => $this->defaultCard
+				'defaultCard' => $this->defaultCard,
+				'language' => $_SESSION ['config']->getLanguage ()
 		] );
 		return $res;
 	}
@@ -45,9 +46,6 @@ class GameController extends AppController {
 			if ($german !== '' and $translation !== '' and $image !== '' and file_exists ( $image )) {
 				$cards [] = new Card ( $german, $translation, $image );
 				$found ++;
-				if ($found > $c) {
-					break;
-				}
 			}
 		}
 		shuffle ( $cards );
