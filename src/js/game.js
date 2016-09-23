@@ -20,6 +20,9 @@ var game = {
 	// Standardwerte mit Parametern überschreiben
 	$.extend(game.data, settings);
 
+	game.data.openCards = 0;
+	game.data.turn = 0;
+
 	game.addCards();
 
     },
@@ -30,10 +33,10 @@ var game = {
 	    item.find('.card-front').css('background-image', "url('" + game.data.defaultCard + "')");
 
 	    $(game.data.board).append(item);
-	    console.log(item.flip({
+	    item.flip({
 		trigger: 'manual',
 
-	    }));
+	    });
 	    item.click(game.flipCard);
 	});
 
