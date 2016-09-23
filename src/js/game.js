@@ -62,7 +62,7 @@ var game = {
 		console.log(data);
 
 		var flip = tile.data("flip-model");
-		console.log(game.data.openCards.length);
+
 		if (!flip.isFlipped && game.data.openCards.length < 2) {
 			if (data.type === TILETYPE.IMAGE) {
 				tile.find('.card-front').css('background-image',
@@ -71,21 +71,38 @@ var game = {
 				tile.find('.card-front').html(data.card.word);
 			}
 			game.data.openCards.push(tile);
-			tile.flip(true);
+
 			if (game.data.openCards.length > 1) {
 				if (game.data.openCards[0].data('tile').card.id === data.card.id) {
+
+					var a = 'b';
+					tile.on('flip:done', {
+						obj : game.data.openCards[0]
+					}, function(event) {
+						console.log(event.data);
+						game.setItemCompleted($(this));
+						game.setItemCompleted(event.data.obj);
+					});
 					game.data.openCards = [];
+
 				} else {
 					setTimeout(function() {
 						$.each(game.data.openCards, function(key, value) {
 							value.flip(false);
 							game.data.openCards = [];
 						});
-					}, 3000);
+					}, 1000);
 				}
 			}
+
+			tile.flip(true);
 		}
 
+	},
+	setItemCompleted : function(tile) {
+		console.log(tile.data('flip-model'), $(this));
+
+		tile.data('flip-model').backElement.addClass('match', 1000);
 	}
 };
 

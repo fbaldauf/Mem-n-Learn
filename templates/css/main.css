@@ -63,3 +63,10 @@
 		height: 5vw;
 	}
 }
+
+.back {
+	background-color: rgb(245, 120, 130);
+}
+.back.match {
+	background-color: #4caf50;
+}
