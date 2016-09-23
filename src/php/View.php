@@ -12,6 +12,19 @@ class View {
 	 */
 	private $_ = array();
 
+	public function __construct() {
+		// Falls Parameter übergeben wurden, wird ein entsprechender Konstruktor aufgerufen
+		$a = func_get_args();
+		$i = func_num_args();
+		if (method_exists($this, $f = '__construct' . $i)) {
+			call_user_func_array(array($this, $f), $a);
+		}
+	}
+
+	public function __construct1($template) {
+		$this->setTemplate($template);
+	}
+
 	/**
 	 * Ordnet eine Variable einem bestimmten Schl&uuml;ssel zu.
 	 * @param String $key Schlüssel

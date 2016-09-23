@@ -53,8 +53,16 @@ var menu = {
 		// src="/images/loading.gif" alt="Loading..." /></div>');
 	    },
 	    success: function(page) {
-		menu.switchPage(page, function(container) {
-		    container.find('.card-container').flip();
+		page = $.parseJSON(page);
+		menu.switchPage(page.view, function(container) {
+		    // container.find('.card-container').flip();
+		    // var g = new Game();
+		    game.init({
+			cards: page.cards,
+			cardContainer: page.cardContainer,
+			board: $('#content').children(),
+			defaultCard: page.defaultCard
+		    });
 		});
 	    },
 	    error: function() {
