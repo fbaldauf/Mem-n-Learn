@@ -1,0 +1,4 @@
+Sound bei gefundenem Paar und bei "Fehler"
+Anzahl Paare unten anzeigen
+Verstrichene Zeit anzeigen
+Sprachauswahl und Login auf einer Seite (Andere Seiten "ausgrauen")
