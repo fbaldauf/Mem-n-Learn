@@ -29,6 +29,7 @@
 <li><a href="#">More...</a></li>
 </ul>
 </li>
+<li><a href="logout">Logout</a></li>
 </ul>
 </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->

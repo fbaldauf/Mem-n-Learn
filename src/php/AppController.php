@@ -12,7 +12,7 @@ class AppController {
 	public function __construct($request) {
 		$this->view = new View();
 		$this->request = $request;
-		$this->template = !empty($request['view']) ? $request['view'] : 'default';
+		$this->template = !empty($request['view']) ? $request['view'] : 'main';
 	}
 
 	/**
@@ -51,7 +51,8 @@ class AppController {
 
 	public function index() {
 		$view = new View();
-		$view->setTemplate('mainmenu');
+		$view->setTemplate('dashboard');
+                $view->assign('username', $_SESSION['username']);
 		return $this->renderView($view);
 	}
 

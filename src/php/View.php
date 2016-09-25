@@ -70,7 +70,7 @@ class View {
 		}
 		else {
 			// Template-File existiert nicht-> Fehlermeldung.
-			return 'could not find template';
+			return 'could not find template' . $file;
 		}
 	}
 }
