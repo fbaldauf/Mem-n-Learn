@@ -70,7 +70,7 @@ class UserController extends AppController {
 
         try {
             $_SESSION['eingeloggt'] = false;
-            $verbindung = new pdo('mysql:dbname=julian1828;host=localhost;port=3306', 'root', '');
+            $verbindung = new pdo('mysql:dbname=julian1828;host=localhost;port=3306', 'julian1828', '14dwf1_mem');
 
             $verbindung->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -116,7 +116,7 @@ class UserController extends AppController {
          try {
             
 
-                mysql_connect('localhost', 'root', '');
+                mysql_connect('localhost', 'julian1828', '14dwf1_mem');
                 $db = mysql_select_db('julian1828');
 
                 $insert = "Insert into User(name,password) values ('$user','$password')";
