@@ -81,7 +81,12 @@ var menu = {
 			data : {
 
 			},
-			success : menu.switchPage
+			success : function(page){
+				page = $.parseJSON(page);
+				menu.switchPage(page.view, function(container) {
+					initChart(page);
+				});
+			},
 		});
 	},
 

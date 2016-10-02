@@ -4,6 +4,11 @@ class AppController {
 	protected $request = null;
 	private $template = '';
 	protected $view = null;
+	
+	protected $db = 'julian1828';
+	protected $dbuser = 'root';
+	protected $dbpassword = '';
+	protected $dbhost = 'localhost';
 
 	/**
 	 * Konstruktor, erstellet den Controller.
