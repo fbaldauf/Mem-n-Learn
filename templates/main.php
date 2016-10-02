@@ -8,10 +8,13 @@
     <script src="includes/jQuery/jquery.flip.min.js" type="text/javascript"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="includes/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 
     <script src="src/js/menu.js" type="text/javascript"></script>
     <script src="src/js/game.js" type="text/javascript"></script>
     <script src="src/js/init.js" type="text/javascript"></script>
+    <script src="src/js/charts.js" type="text/javascript"></script>
 
 		<link href="includes/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
 		<link rel="stylesheet" type="text/css" href="templates/css/main.css"></link>
