@@ -14,7 +14,6 @@ class Autoloader {
 
 		$pfad = self::$basisPfad . DS . 'entities' . DS . $klasse . '.php';
 
-
 		if (!file_exists($pfad)){
 			$pfad = self::$basisPfad . DIRECTORY_SEPARATOR . $klasse . '.php';
 			if (!file_exists($pfad)) {

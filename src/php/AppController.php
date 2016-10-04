@@ -78,5 +78,13 @@ class AppController {
 	public function setTemplate($template) {
 		$this->template = $template;
 	}
+        
+        public function setLanguage($lang) {
+            if(substr($lang,0,5) == 'lang-') {
+                $lang = substr($lang,5);
+            }
+            $_SESSION['config']->setLanguage($lang);
+            return $this->index();
+        }
 }
 ?>
