@@ -3,13 +3,52 @@ class UserController extends AppController {
 	public function index() {
 		$this->view = new View ();
 		$this->view->setTemplate ( 'userstats' );
-		return $this->renderView ();
+
+		$data = $this->getStatistics ();
+		$this->view->assign ( 'data', $data );
+
+		return json_encode ( [
+				'view' => $this->renderView (),
+				'data' => $data,
+				'user' => $_SESSION ['username']
+		] );
+	}
+	protected function getStatistics() {
+		$data = [ ];
+
+		$sessionuserID = $_SESSION ['ID'];
+
+		// Schnellstest Spiel
+		$sql = "SELECT MIN(totaltime) as min FROM `result` WHERE F_userID = '$sessionuserID'";
+		$row = $this->fetch_object ( $this->query ( $sql ) );
+		$data ['fastest'] = $row->min;
+
+		// Anzahl Spiele
+		$sql = "SELECT COUNT(F_userID) AS Anzahl FROM `result` WHERE F_userID = '$sessionuserID'";
+		$row = $this->fetch_object ( $this->query ( $sql ) );
+		$data ['countGames'] = $row->Anzahl;
+
+		// Alle Spiele
+		$sql = "SELECT date, totaltime, TIME_TO_SEC(totaltime) / 60 as timeMinutes FROM `result` WHERE F_userID = '$sessionuserID' ORDER By date asc";
+		$ergebnistabellerow = $this->query ( $sql );
+		$data ['games'] = [ ];
+
+		while ( $row = $this->fetch_object ( $ergebnistabellerow ) ) {
+			$tmpDate = new DateTime ( $row->date );
+			$data ['games'] [] = [
+					'date' => $tmpDate->format ( 'd.m.Y' ),
+					'time' => $row->totaltime,
+					'timeMinutes' => $row->timeMinutes
+			];
+		}
+
+		return $data;
 	}
 	public function login() {
 		$check = false;
 		$this->view = new View ();
 
-		// Pr�fe ob Login erfolgreich
+		// Prüfe ob Login erfolgreich
 		if (isset ( $this->request ['user'] ) and isset ( $this->request ['password'] )) {
 			$check = $this->checkLogin ( $this->request ['user'], $this->request ['password'] );
 			if (! $check) {
@@ -60,65 +99,43 @@ class UserController extends AppController {
 		return false;
 	}
 	protected function checkLogin($user, $password) {
-		try {
-			$_SESSION ['eingeloggt'] = false;
-			$verbindung = new pdo ( 'mysql:dbname=julian1828;host=localhost;port=3306', 'root', '' );
+		$_SESSION ['eingeloggt'] = false;
 
-			$verbindung->setAttribute ( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+		$this->query ( 'UPDATE user SET password=\'' . md5 ( $password ) . '\' WHERE password=\'' . $password . '\' AND LOWER(name)=LOWER(\'' . $user . '\')' );
 
-			$abfrage = 'SELECT name, password FROM user WHERE name = ? AND password = ?';
+		// $verbindung = new pdo ( 'mysql:dbname=' . $this->db . ';host=' . $this->dbhost . ';port=3306', $this->dbuser, $this->dbpassword );
+		// $verbindung->setAttribute ( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
-			$stmt = $verbindung->prepare ( $abfrage );
+		// $abfrage = 'SELECT name, password, userID FROM user WHERE name = ? AND password = ?';
+		$abfrage = "SELECT name, password, userID FROM user WHERE LOWER(name) = LOWER('$user') AND password = '" . md5 ( $password ) . "'";
 
-			$stmt->bindParam ( 1, $user, PDO::PARAM_STR );
-			$stmt->bindParam ( 2, $password, PDO::PARAM_STR );
+		// $stmt = $verbindung->prepare ( $abfrage );
 
-			$status = $stmt->execute ();
+		// $stmt->bindParam ( 1, $user, PDO::PARAM_STR );
+		// $stmt->bindParam ( 2, $password, PDO::PARAM_STR );
 
-			if (! $status) {
-				echo "Abfrage fehlgeschlagen.";
-			}
+		// $status = $stmt->execute ();
 
-			$id = $stmt->fetchColumn ( 0 );
-			// echo "name:".$id;
+		if (! $res = $this->query ( $abfrage )) {
+			echo "Abfrage fehlgeschlagen.";
+		}
 
-			if (empty ( $id )) {
-				// $message = 'Access Error<br>';
-				// echo $message;
-				// echo "Falscher Benutzername oder falsches Passwort.";
-			} else {
+		if (! $row = $this->fetch_object ( $res ))
+			return false;
+		$id = $row->name;
 
-				$_SESSION ['eingeloggt'] = true;
-				$_SESSION ['username'] = $user;
+		// echo "name:".$id;
 
-				// echo $id;
-			}
-		} catch ( PDOException $e ) {
-
-			// echo $e->getMessage();
-			echo "Unbekannter Fehler!";
+		if (! empty ( $id )) {
+			$_SESSION ['eingeloggt'] = true;
+			$_SESSION ['username'] = $user;
+			$_SESSION ['ID'] = $row->userID;
 		}
 
 		return $this->isLoggedIn ();
 	}
 	protected function checkRegister($user, $password) {
-		try {
-			$insert = "Insert into User(name,password) values ('$user','$password')";
-
-			if (function_exists ( 'mysql_connect' )) {
-				mysql_connect ( 'localhost', 'julian1828', '14dwf1_mem' );
-				$db = mysql_select_db ( 'julian1828' );
-				return mysql_query ( $insert );
-			} elseif (function_exists ( 'mysqli_connect' )) {
-				$link = mysqli_connect ( 'localhost', 'root', '' );
-				$db = mysqli_select_db ( $link, 'julian1828' );
-				return mysqli_query ( $link, $insert );
-			}
-
-			return false;
-		} catch ( PDOException $e ) {
-			// echo $e->getMessage();
-			return false;
-		}
+		$insert = "Insert into User(name,password) values ('$user','" . md5 ( $password ) . "')";
+		return $this->query ( $insert );
 	}
 }

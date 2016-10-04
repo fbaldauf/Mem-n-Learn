@@ -8,6 +8,10 @@ class AppController {
 	 */
 	protected $view = null;
 	private $dbConnection = null;
+	protected $db = 'julian1828';
+	protected $dbuser = 'root';
+	protected $dbpassword = '';
+	protected $dbhost = 'localhost';
 
 	/**
 	 * Konstruktor, erstellet den Controller.
@@ -112,17 +116,23 @@ class AppController {
 	private function checkDatabaseTables() {
 		$tables = [
 				'testtable' => 'CREATE TABLE testtable(id varchar(20))',
-				// 'user' => 'CREATE TABLE user (userID ID PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255), password PASSWORD'
 				'user' => 'CREATE TABLE `user` (
 					`userID` INT NOT NULL AUTO_INCREMENT ,
 					`name` VARCHAR(255) NOT NULL,
 					`password` VARCHAR(255),
 					PRIMARY KEY (`userID`)
+				) ENGINE = InnoDB;',
+				'result' => 'CREATE TABLE `result` (
+					`F_userID` INT,
+					`date` DATE,
+					`totaltime` TIME,
+					FOREIGN KEY `F_results_user`(F_userID) REFERENCES user(userID) ON DELETE RESTRICT
 				) ENGINE = InnoDB;'
 		];
 		foreach ( $tables as $table => $sql ) {
 			if (! $this->query ( 'SELECT 1 FROM ' . $table . ' LIMIT 1' )) {
 				if (! $this->query ( $sql )) {
+					echo $sql;
 					return false;
 				}
 			}
@@ -191,6 +201,13 @@ class AppController {
 			} elseif (function_exists ( 'mysqli_query' )) {
 				return mysqli_query ( $this->dbConnection, $sql );
 			}
+		}
+	}
+	protected function fetch_object($res) {
+		if (function_exists ( 'mysql_fetch_object' )) {
+			return mysql_fetch_object ( $res );
+		} elseif (function_exists ( 'mysqli_fetch_object' )) {
+			return mysqli_fetch_object ( $res );
 		}
 	}
 	protected function renderView(View $view = null) {
