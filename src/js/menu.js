@@ -62,9 +62,12 @@ var menu = {
 					game.init({
 						cards : page.cards,
 						cardContainer : page.cardContainer,
-						board : $('#content').children(),
+						board : $('#thumb-wrap'),
 						defaultCard : page.defaultCard,
-						language : page.language
+						language : page.language,
+						nav : {
+							mute : $('#mute')
+						}
 					});
 				});
 			},
@@ -81,7 +84,7 @@ var menu = {
 			data : {
 
 			},
-			success : function(page){
+			success : function(page) {
 				page = $.parseJSON(page);
 				menu.switchPage(page.view, function(container) {
 					initChart(page);

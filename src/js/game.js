@@ -1,5 +1,9 @@
 var game = {
 
+	settings : {
+		mute : false
+	},
+
 	data : {
 		cards : [],
 		cardContainer : '',
@@ -25,6 +29,9 @@ var game = {
 		game.data.turn = 0;
 
 		game.addCards();
+		
+		console.log(game.data.nav.mute);
+		game.data.nav.mute.flip();
 
 	},
 
@@ -95,10 +102,12 @@ var game = {
 				}
 			}
 
-			var audiofile = 'data/audio/' + game.data.language + '/'
-					+ data.card.word + '.mp3';
-			var audio = new Audio(audiofile);
-			audio.play();
+			if (!game.settings.mute) {
+				var audiofile = 'data/audio/' + game.data.language + '/'
+						+ data.card.word + '.mp3';
+				var audio = new Audio(audiofile);
+				audio.play();
+			}
 
 			tile.flip(true);
 		}
