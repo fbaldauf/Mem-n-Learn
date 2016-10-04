@@ -22,24 +22,24 @@ foreach ( $rules as $action => $rule ) {
 		if (! isset ( $_SESSION )) {
 			session_start ();
 		}
-                
-                //Prüfen, ob Benutzer schon eingeloggt ist
-                $user = new UserController($request);
-                if (!$user->isLoggedIn()) {
-                    // Benutzer ist noch nicht eingeloggt
-                    // -> Zur Loginseite weiterleiten
-                    if (strtolower($uri) === '/register') {
-                        echo $user->register();
-                    } else {
-                        echo $user->login();
-                    }
-                    die();
-                }
-                //Login Ende
-                
+
 		if (! isset ( $_SESSION ['config'] )) {
 			$_SESSION ['config'] = new Configuration ();
 		}
+
+		// Prï¿½fen, ob Benutzer schon eingeloggt ist
+		$user = new UserController ( $request );
+		if (! $user->isLoggedIn ()) {
+			// Benutzer ist noch nicht eingeloggt
+			// -> Zur Loginseite weiterleiten
+			if (strtolower ( $uri ) === '/register') {
+				echo $user->register ();
+			} else {
+				echo $user->login ();
+			}
+			die ();
+		}
+		// Login Ende
 
 		array_shift ( $params );
 		$action = $rule ['action'];
