@@ -7,3 +7,8 @@ Bootstrap --> Einspieler, Zweispieler (zweiter Login)
 Neues Spiel MSG BOX JA Nein?
 
 Nachdem ein Paar gefunden wurde, soll das Wort in der Muttersprache auf der Karte angezeigt werden.
+
+Anmerkungen Jankowsky:
+Klick Rate
+Fehlerhafte Aufdekungen
+PDF Ausgabe XSL
