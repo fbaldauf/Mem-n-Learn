@@ -153,8 +153,8 @@ class AppController {
 	protected function dbConnect() {
 		if ($this->dbConnection == null) {
 			if (function_exists ( 'mysql_connect' )) {
-				if ($this->dbConnection = @mysql_connect ( 'localhost', 'julian1828', '14dwf1_mem' )) {
-					return true;
+				if ($this->dbConnection = @mysql_connect ( 'localhost', 'root', '' )) {
+					return $this->dbSelectDB ();
 				}
 			} elseif (function_exists ( 'mysqli_connect' )) {
 				if ($this->dbConnection = @mysqli_connect ( 'localhost', 'root', '' )) {
