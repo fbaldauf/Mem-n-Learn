@@ -12,3 +12,4 @@ Anmerkungen Jankowsky:
 Klick Rate
 Fehlerhafte Aufdekungen
 PDF Ausgabe XSL
+Carten in Kategorien Einordnen...
