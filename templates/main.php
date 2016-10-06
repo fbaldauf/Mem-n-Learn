@@ -2,7 +2,8 @@
 <html>
 <head>
 <title>Mem'n'Learn</title>
-<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="includes/jQuery/jquery-3.1.js" type="text/javascript"></script>
@@ -19,11 +20,11 @@
 <script src="src/js/charts.js" type="text/javascript"></script>
 
 <link href="includes/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
-<link rel="stylesheet" type="text/css" href="templates/css/main.css"></link>
+<link rel="stylesheet" type="text/css" href="templates/css/main.css_"></link>
 </head>
 <body>
 	<?php echo $this->_['menu']; ?>
-	<div id="content">
+	<div id="content" class="container-fluid">
 		<?php echo $this->_['content']; ?>
 	</div>
 	<!--
