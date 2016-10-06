@@ -32,7 +32,7 @@ $langs = [
 					<div style="padding: 1vw"
 						class="col-xs-4 col-sm-3 col-md-1 <?php echo ($_SESSION['config']->getLanguage() == $l) ?  'alert-success' : '';?>" >
 						<img class="img-responsive center-block"
-							src="templates/img/flags/png/<?php echo $img; ?>"
+							src="templates/img/flags/PNG/<?php echo $img; ?>"
 							alt="<?php echo $l; ?>">
 
 					</div>

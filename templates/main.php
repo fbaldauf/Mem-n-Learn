@@ -1,9 +1,10 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//DE">
 <html>
 <head>
 <title>Mem'n'Learn</title>
-<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"> 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="includes/jQuery/jquery-3.1.js" type="text/javascript"></script>
@@ -15,7 +16,7 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 <script type="text/javascript">
-$(document).data('loggedIn', <?php $u = new UserController([]); echo ($u->isLoggedIn())?'true':'false'; ?>);
+$(document).data('loggedIn', <?php $u = new UserController(); echo ($u->isLoggedIn())?'true':'false'; ?>);
 </script>
 <script src="src/js/menu.js" type="text/javascript"></script>
 <script src="src/js/game.js" type="text/javascript"></script>
@@ -25,6 +26,7 @@ $(document).data('loggedIn', <?php $u = new UserController([]); echo ($u->isLogg
 <link href="includes/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
 <link rel="stylesheet" type="text/css" href="templates/css/main.css"></link>
 </head>
+
 <body>
 	<?php
 	echo $this->_ ['menu'];
