@@ -1,13 +1,26 @@
-<div align="center">
+<div class="form-group">
 
     <?php if (isset($this->_['errmessage']) AND strlen($this->_['errmessage'])>0 ){ ?>
-        <span style="color: #ffffff; background-color: #ff0000"><?php echo $this->_['errmessage']; ?></span>
+        <div class="alert alert-danger"><?php echo $this->_['errmessage']; ?></div>
     <?php } ?>
     
             <h1>Registrieren</h1>
 
-            <form name="createuser" action="register" method="POST">
+	<form action="register" method="POST">
 
+		<div class="form-group">
+			<label for="txtUser">Benutzername:</label> <input type="text"
+				class="form-control" id="txtUser" name="user">
+		</div>
+		<div class="form-group">
+			<label for="txtPwd">Password:</label> <input type="password"
+				class="form-control" id="txtPwd" name="password">
+		</div>
+		<button type="submit" class="btn btn-default">Registrieren</button>
+
+	</form>
+</div>
+<!-- 
                 <table>
 
                     <tr>
@@ -42,3 +55,4 @@
                 </table>
             </form>     
         </div>
+ -->
