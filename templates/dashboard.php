@@ -1,11 +1,44 @@
-<h1>Dashboard</h1>
-<p>Willkommen <?php echo ucfirst($this->_['username']); ?></p>
+<?php
+$langs = [ 
+		'german' => 'Germany-01.png',
+		'english' => 'United Kingdom-01.png',
+		'french' => 'France-01.png',
+		'spanish' => 'Spain-01.png',
+		'pashto' => 'Pakistan-01.png' 
+];
+?>
+<div class="row">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-10">
+		<h1>Dashboard</h1>
+		<p>Willkommen <?php echo ucfirst($this->_['username']); ?></p>
+	</div>
+</div>
 
-<p>Deine aktuelle Sprache ist: <?php echo ucfirst($_SESSION['config']->getLanguage()) ?></p>
 
-<p>Bitte waehle deine Muttersprache/Anzeigesprache:</p>
-<a href="lang-german"><img alt="German" src="templates/img/flags/png/Germany-01.png" height="20px"> German</a>
-<a href="lang-english"><img alt="English" src="templates/img/flags/png/United Kingdom-01.png" height="20px"> English</a>
-<a href="lang-french"><img alt="French" src="templates/img/flags/png/France-01.png" height="20px"> French</a>
-<a href="lang-spanish"><img alt="Spanish" src="templates/img/flags/png/Spain-01.png" height="20px"> Spanish</a>
-<a href="lang-pashto"><img alt="Pashto" src="templates/img/flags/png/Pakistan-01.png" height="20px"> Pashto</a>
+
+
+<div class="row" style="margin-top: 1vw">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-10">
+		<div class="panel panel-default">
+			<div class="panel-heading">Sprache auswählen</div>
+			<div class="panel-body">
+				<p>Deine aktuelle Sprache ist: <?php echo ucfirst($_SESSION['config']->getLanguage()) ?></p>
+		<?php
+		foreach ( $langs as $l => $img ) :
+			?>
+			<a href="lang-<?php echo $l; ?>">
+					<div
+						class="col-xs-4 col-sm-3 col-md-1 <?php echo ($_SESSION['config']->getLanguage() == $l) ?  'alert-success' : '';?>">
+						<img class="img-responsive center-block"
+							src="templates/img/flags/png/<?php echo $img; ?>"
+							alt="<?php echo $l; ?>">
+
+					</div>
+				</a> 
+			<?php endforeach;?>
+		</div>
+		</div>
+	</div>
+</div>
