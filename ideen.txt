@@ -2,3 +2,14 @@ Sound bei gefundenem Paar und bei "Fehler"
 Anzahl Paare unten anzeigen
 Verstrichene Zeit anzeigen
 Sprachauswahl und Login auf einer Seite (Andere Seiten "ausgrauen")
+
+Bootstrap --> Einspieler, Zweispieler (zweiter Login)
+Neues Spiel MSG BOX JA Nein?
+
+Nachdem ein Paar gefunden wurde, soll das Wort in der Muttersprache auf der Karte angezeigt werden.
+
+Anmerkungen Jankowsky:
+Klick Rate
+Fehlerhafte Aufdekungen
+PDF Ausgabe XSL
+Carten in Kategorien Einordnen...
