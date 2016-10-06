@@ -44,18 +44,19 @@ var game = {
 			list.push(imageTile);
 			var wordTile = new Tile(card, TILETYPE.WORD);
 			list.push(wordTile);
-
 		});
 
 		list = shuffleArray(list);
-		// console.log(list);
+		$(game.data.board).empty();
+
 		$.each(list, function(key, value) {
 			var item = $(game.data.cardContainer);
 			// item.find('.card-front').css('background-image',
 			// "url('" + game.data.defaultCard + "')");
-
+			
 			item.data('tile', value);
 			$(game.data.board).append(item);
+			
 			item.flip({
 				trigger : 'manual',
 
