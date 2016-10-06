@@ -27,11 +27,12 @@ foreach ( $rules as $action => $rule ) {
 			$_SESSION ['config'] = new Configuration ();
 		}
 
-		// Pr�fen, ob Benutzer schon eingeloggt ist
+		// Prüfen, ob Benutzer schon eingeloggt ist
 		$user = new UserController ( $request );
 		if (! $user->isLoggedIn ()) {
 			// Benutzer ist noch nicht eingeloggt
 			// -> Zur Loginseite weiterleiten
+			$user->setTemplate ( (isset ( $_SERVER ['HTTP_X_REQUESTED_WITH'] )) ? 'json' : 'main' );
 			if (strtolower ( $uri ) === '/register') {
 				echo $user->register ();
 			} else {

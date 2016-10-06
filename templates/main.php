@@ -14,6 +14,9 @@
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
+<script type="text/javascript">
+$(document).data('loggedIn', <?php $u = new UserController([]); echo ($u->isLoggedIn())?'true':'false'; ?>);
+</script>
 <script src="src/js/menu.js" type="text/javascript"></script>
 <script src="src/js/game.js" type="text/javascript"></script>
 <script src="src/js/init.js" type="text/javascript"></script>
@@ -23,7 +26,9 @@
 <link rel="stylesheet" type="text/css" href="templates/css/main.css_"></link>
 </head>
 <body>
-	<?php echo $this->_['menu']; ?>
+	<?php
+	echo $this->_ ['menu'];
+	?>
 	<div id="content" class="container-fluid">
 		<?php echo $this->_['content']; ?>
 	</div>

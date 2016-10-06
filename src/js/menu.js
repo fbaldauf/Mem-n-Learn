@@ -37,6 +37,10 @@ var menu = {
 		case 'statistic':
 			menu.showStats();
 			break;
+		case 'logout':
+			menu.setActive(false);
+			$.get(target, null, menu.switchPage);
+			break;
 		default:
 			console.log('Kein spezifischer Handler für ', target);
 			$.get(target, null, menu.switchPage);
@@ -104,5 +108,15 @@ var menu = {
 		// TODO: Für später: Adressleiste aktualisieren
 		// var stateObj = {foo: "bar"};
 		// history.pushState(stateObj, "page 2", "bar.html");
+	},
+	setActive : function(active) {
+		menu.config.items.each(function() {
+			console.log($(this), active);
+			if (active) {
+				$(this).removeClass('disabled');
+			} else {
+				$(this).addClass('disabled');
+			}
+		});
 	}
 };
