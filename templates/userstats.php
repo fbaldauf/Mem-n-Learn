@@ -1,53 +1,47 @@
+<div class="row">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-10">
+		<h1>Dies sind die Ergebnise von <?php  echo ucfirst ( $_SESSION ['username'] ) ?>!</h1>
+		Dein schnellstes Spiel: <?php echo $this->_ ['data'] ['fastest'] ?><br />
 
-<?php
+		Anzahl Spiele: <?php echo sizeof ( $this->_ ['data'] ['games'] ) ?><br />
 
-echo '
-    <div align="center">
-		';
-
-echo "<h1>Dies sind die Ergebnise von " . $_SESSION ['username'] . "!</h1>";
-
-echo "Dein schnellstes Spiel: " . $this->_ ['data'] ['fastest'] . "<br />";
-
-echo "Anzahl Spiele: " . sizeof ( $this->_ ['data'] ['games'] ) . '<br />';
-
-echo "<br><br><strong>Deine Spiele:<br></strong>";
-
-$anzahl = 1;
-echo '
-		<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;border-top-width:1px;border-bottom-width:1px;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;border-top-width:1px;border-bottom-width:1px;}
-.tg .tg-h31u{font-family:Arial, Helvetica, sans-serif !important;;vertical-align:top}
-.tg .tg-ejgj{font-family:Verdana, Geneva, sans-serif !important;;vertical-align:top}
-</style>
-		';
-echo '<table class="tg">';
-echo "<tr>";
-echo '<th class="tg-ejgj">Nr.</th>';
-echo '<th class="tg-ejgj">Datum</th>';
-echo '<th class="tg-ejgj">Zeit</th>';
-echo "</tr>";
-// while($row = mysqli_fetch_object($ergebnistabellerow))
-foreach ( $this->_ ['data'] ['games'] as $row ) {
-	
-	// $tmpdate = $row->date;
-	// $splitdate = explode ( "-", $tmpdate );
-	echo '
- 			<tr>
- 				<td class="tg-h31u">' . $anzahl . "." . '</td>
- 				<td class="tg-h31u">' . $row ['date'] . '</td>
- 				<td class="tg-h31u">' . $row ['time'] . '</td>
- 			</tr>
- 	';
+	</div>
+</div>
+<div class="row" style="margin-top: 1vw">
+	<div class="col-lg-1"></div>
+	<div class="table-responsive col-lg-10">
+		<h2>
+			Deine Spiele<br>
+		</h2>
+		<table class="table table-striped table-hover table-condensed">
+			<tr>
+				<th>Nr.</th>
+				<th>Datum</th>
+				<th>Zeit</th>
+			</tr>
+		
+<?php $anzahl = 1;foreach ( $this->_ ['data'] ['games'] as $row ): ?>
+ 			<tr
+				class="
+				<?php echo ($row['time'] == $this->_['data']['fastest']) ? 'success' : ''; ?>">
+				<td><?php echo $anzahl ?></td>
+				<td><?php echo $row ['date'] ?></td>
+				<td><?php echo $row ['time'] ?></td>
+			</tr>
+ 	<?php
 	$anzahl = $anzahl + 1;
-}
-echo "</table>";
-
-echo '
-		<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		</div>
-		';
-
+endforeach
+;
 ?>
+</table>
+
+	</div>
+	<div class="col-lg-1"></div>
+</div>
+<div class="row">
+	<div class="col-lg-1"></div>
+	<div id="container" class="col-lg-10"
+		style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+	<div class="col-lg-1"></div>
+</div>
