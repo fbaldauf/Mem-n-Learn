@@ -1,4 +1,4 @@
-@CHARSET "ISO-8859-1";
+/*@CHARSET "ISO-8859-1";
 
 .header {
 	width: 100%;
@@ -63,7 +63,7 @@
 		height: 5vw;
 	}
 }
-
+*/
 .back {
 	background-color: rgb(245, 120, 130);
 }

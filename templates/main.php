@@ -23,7 +23,7 @@ $(document).data('loggedIn', <?php $u = new UserController([]); echo ($u->isLogg
 <script src="src/js/charts.js" type="text/javascript"></script>
 
 <link href="includes/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
-<link rel="stylesheet" type="text/css" href="templates/css/main.css_"></link>
+<link rel="stylesheet" type="text/css" href="templates/css/main.css"></link>
 </head>
 <body>
 	<?php

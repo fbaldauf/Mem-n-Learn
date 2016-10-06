@@ -1,18 +1,15 @@
-<div id="thumb-container" class="card-container">
-	<div class="front">
-		<div class="thumb-dummy"></div>
-		<div class="thumb-element" style="background-color: <?php echo /*($i % 2 == 0) ? '#ffffff' : */'#ffffff';?>">
-			<span class="thumbnail card"
-				style="margin: 0 auto; background-image: url('templates/img/yugioh-card-back.png'); background-position: inherit; background-size: contain;">
-			</span>
+<div id="thumb-container" class="card-container col-lg-2 col-md-2 col-sm-2 col-xs-6" style="height: 13vh; width: 13vw; padding:0">
+	<div class="front" style="height: 100%;">
+		<!-- <div class="thumb-dummy"></div>-->
+		<div class="thumb-element" style="height: 100%; padding: 0.5vw;">
+			<img class="thumbnail img-responsive center-block" src="templates/img/yugioh-card-back.png" style="height: 100%" />
 		</div>
 	</div>
-	<div class="back">
-		<div class="thumb-dummy"></div>
-		<!-- <div class="thumb-element" style="background-color: <?php echo /*($i % 2 == 0) ? '#eaebe6' :*/ '#f57882';?>"> -->
-		<div class="thumb-element">
-			<span class="thumbnail card card-front"
-				style="margin: 0 auto; background-position: inherit; background-size: contain;"></span>
+	<div class="back" style="height: 100%;">
+		<!-- <div class="thumb-dummy"></div>-->
+		<div class="thumb-element" style="height: 100%; width: 100%; padding: 0.5vw; display: block">
+			<img class="thumbnail img-responsive center-block card-front-img" src="templates/img/yugioh-card-back.png" style="height: 100%" />
+			<span class="thumbnail text-center center-block card-front-text" style="font-size: 2vw; height: 100%; display: table-cell; vertical-align: middle;">_dummy_</span>
 		</div>
 	</div>
 </div>

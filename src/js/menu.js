@@ -42,7 +42,7 @@ var menu = {
 			$.get(target, null, menu.switchPage);
 			break;
 		default:
-			console.log('Kein spezifischer Handler für ', target);
+			//console.log('Kein spezifischer Handler für ', target);
 			$.get(target, null, menu.switchPage);
 		}
 	},
@@ -111,7 +111,6 @@ var menu = {
 	},
 	setActive : function(active) {
 		menu.config.items.each(function() {
-			console.log($(this), active);
 			if (active) {
 				$(this).removeClass('disabled');
 			} else {

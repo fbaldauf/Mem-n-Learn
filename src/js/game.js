@@ -11,7 +11,8 @@ var game = {
 		turn : 0,
 		openCards : [],
 		defaultCard : '',
-		language : ''
+		language : '',
+		elapsedTime : 0
 	},
 	init : function(settings) {
 
@@ -24,15 +25,25 @@ var game = {
 
 		// Standardwerte mit Parametern überschreiben
 		$.extend(game.data, settings);
-
 		game.data.openCards = [];
 		game.data.turn = 0;
 
 		game.addCards();
-		
-		console.log(game.data.nav.mute);
-		game.data.nav.mute.flip();
+		// console.log(game.data.nav.mute);
+		// game.data.nav.mute.flip();
 
+		game.startTimer();
+	},
+
+	startTimer : function() {
+		setInterval(function() {
+			game.addTimer();
+		}, 1000);
+	},
+	addTimer : function() {		
+		game.data.elapsedTime++;
+		var t = new Date(2016, 1, 1, 0, 0, game.data.elapsedTime,0);
+		$('.expired-time').html(t.toLocaleTimeString());
 	},
 
 	addCards : function() {
@@ -53,10 +64,10 @@ var game = {
 			var item = $(game.data.cardContainer);
 			// item.find('.card-front').css('background-image',
 			// "url('" + game.data.defaultCard + "')");
-			
+
 			item.data('tile', value);
 			$(game.data.board).append(item);
-			
+
 			item.flip({
 				trigger : 'manual',
 
@@ -68,16 +79,22 @@ var game = {
 	flipCard : function(event) {
 		var tile = $(event.currentTarget);
 		var data = tile.data('tile');
-		console.log(data.card.id);
+		// console.log(data.card.id);
 
 		var flip = tile.data("flip-model");
 
 		if (!flip.isFlipped && game.data.openCards.length < 2) {
 			if (data.type === TILETYPE.IMAGE) {
-				tile.find('.card-front').css('background-image',
-						"url('" + data.card.image + "')");
+				tile.find('.card-front-text').css('display', 'none');
+				tile.find('.card-front-img').css('display', 'block').attr(
+						'src', data.card.image);
+				// .css('background-image',"url('" + data.card.image +
+				// "')");
 			} else {
-				tile.find('.card-front').html(data.card.word);
+				tile.find('.card-front-img').css('display', 'none')
+				tile.find('.card-front-text').css('display', 'table-cell')
+						.html(data.card.word);
+				tile.find('.card-front-text').parent().css('display', 'table');
 			}
 			game.data.openCards.push(tile);
 
@@ -115,7 +132,7 @@ var game = {
 
 	},
 	setItemCompleted : function(tile) {
-		console.log(tile.data('flip-model'), $(this));
+		// console.log(tile.data('flip-model'), $(this));
 
 		tile.data('flip-model').backElement.addClass('match', 1000);
 	}
