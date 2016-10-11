@@ -1,35 +1,40 @@
 <?php
 return array (
-		'index' => [
+		'index' => [ 
 				'route' => '/',
 				'controller' => 'AppController',
-				'action' => 'index'
+				'action' => 'index' 
 		],
-		'new-game' => [
+		'new-game' => [ 
 				'route' => '/new-game',
 				'controller' => 'GameController',
-				'action' => 'startNew'
+				'action' => 'startNew' 
 		],
-		'stats' => [
+		'save-game' => [ 
+				'route' => '/save-game',
+				'controller' => 'GameController',
+				'action' => 'save' 
+		],
+		'stats' => [ 
 				'route' => '/statistic',
 				'controller' => 'UserController',
-				'action' => 'index'
+				'action' => 'index' 
 		],
-		'logout' => [
+		'logout' => [ 
 				'route' => "/logout",
 				'controller' => 'UserController',
-				'action' => 'logout'
+				'action' => 'logout' 
 		],
-		'register' => [
+		'register' => [ 
 				'route' => "/register",
 				'controller' => 'UserController',
-				'action' => 'register'
+				'action' => 'register' 
 		],
-		'language' => [
+		'language' => [ 
 				'route' => "/(?'lang'[\w\-]+)",
 				'controller' => 'AppController',
-				'action' => 'setLanguage'
-		]
+				'action' => 'setLanguage' 
+		] 
 );
 
 // Examples

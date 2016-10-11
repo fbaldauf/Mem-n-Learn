@@ -128,9 +128,11 @@ class AppController {
 					PRIMARY KEY (`userID`)
 				) ENGINE = InnoDB;',
 				'result' => 'CREATE TABLE `result` (
+					`ID` INT NOT NULL AUTO_INCREMENT ,
 					`F_userID` INT,
 					`date` DATE,
 					`totaltime` TIME,
+					PRIMARY KEY (`ID`),
 					FOREIGN KEY `F_results_user`(F_userID) REFERENCES user(userID) ON DELETE RESTRICT
 				) ENGINE = InnoDB;' 
 		];
