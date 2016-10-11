@@ -25,6 +25,7 @@ class GameController extends AppController {
 		// var_dump($this->request);
 		$response = new JavaScriptResponse ();
 		$sql = 'INSERT INTO result (`F_userID`, `date`, `totaltime`) ';
+		$sql .= 'VALUES (' . $_SESSION ['ID'] . ', \'' . date ( 'Y-m-d', time () ) . '\', SEC_TO_TIME(' . $this->request ['time'] . '))';
 		$response->setContent ( ($this->query ( $sql )) ? true : [false, $this->dbError()] );
 		
 		return $response;
