@@ -8,20 +8,29 @@ class GameController extends AppController {
 		$this->view = new View ();
 		$this->view->setTemplate ( 'game' );
 		$this->view->assign ( 'cards', $this->getCards () );
-
+		
 		$cardContainer = new View ( 'cardContainer' );
-
+		
 		$res = new JavaScriptResponse ();
-		$res->setContent ( [
+		$res->setContent ( [ 
 				'view' => $this->renderView (),
 				'cards' => $this->getCards (),
 				'cardContainer' => $cardContainer->loadTemplate (),
 				'defaultCard' => $this->defaultCard,
-				'language' => $_SESSION ['config']->getLanguage ()
+				'language' => $_SESSION ['config']->getLanguage () 
 		] );
 		return $res;
 	}
-
+	public function save() {
+		// var_dump($this->request);
+		$response = new JavaScriptResponse ();
+		$sql = 'INSERT INTO result (`F_userID`, `date`, `totaltime`) ';
+		$sql .= 'VALUES (' . $_SESSION ['ID'] . ', \'' . date ( 'Y-m-d', time () ) . '\', SEC_TO_TIME(' . $this->request ['time'] . '))';
+		$response->setContent ( ($this->query ( $sql )) ? true : [false, $this->dbError()] );
+		
+		return $response;
+	}
+	
 	/**
 	 *
 	 * @return Card[]
@@ -35,12 +44,12 @@ class GameController extends AppController {
 		$found = 0;
 		$cards = [ ];
 		$xml = new SimpleXMLElement ( file_get_contents ( 'data/cards.xml' ) );
-
+		
 		foreach ( $xml->children () as $card ) {
 			$german = '' . $card->translations->german;
 			/** @var Configuration $conf */
 			$conf = $_SESSION ['config'];
-
+			
 			$translation = '' . $card->translations->{$conf->getLanguage ()};
 			$image = 'templates/img/cards/' . $card->image;
 			if ($german !== '' and $translation !== '' and $image !== '' and file_exists ( $image )) {

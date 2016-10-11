@@ -12,7 +12,8 @@ var game = {
 		openCards : [],
 		defaultCard : '',
 		language : '',
-		elapsedTime : 0
+		elapsedTime : 0,
+		completed : []
 	},
 	init : function(settings) {
 
@@ -40,9 +41,9 @@ var game = {
 			game.addTimer();
 		}, 1000);
 	},
-	addTimer : function() {		
+	addTimer : function() {
 		game.data.elapsedTime++;
-		var t = new Date(2016, 1, 1, 0, 0, game.data.elapsedTime,0);
+		var t = new Date(2016, 1, 1, 0, 0, game.data.elapsedTime, 0);
 		$('.expired-time').html(t.toLocaleTimeString());
 	},
 
@@ -131,10 +132,46 @@ var game = {
 		}
 
 	},
-	setItemCompleted : function(tile) {
-		// console.log(tile.data('flip-model'), $(this));
+	checkEnd : function() {
+		if (game.data.cards.length * 2 == game.data.completed.length) {
+			game.saveResults();
+			alert("Gewonnen!");
+			$.each(game.data.completed, function(key, item) {
+				setTimeout(function() {
+					setInterval(function() {
+						item.flip('toggle');
+					}, 1000)
+				}, 500);
+			});
+		}
+	},
+	saveResults : function() {
+		$.ajax({
+			type : 'POST',
+			url : 'save-game',
+			data : {
+				time : game.data.elapsedTime
+			},
+			beforeSend : function() {
+				// $('#ajax-panel').html('<div class="loading"><img
+				// src="/images/loading.gif" alt="Loading..." /></div>');
+			},
+			success : function(response) {
+				var data = $.parseJSON(response);
+				console.log(data);
+			},
+			error : function() {
+				$('#ajax-panel').empty();
+			}
+		});
+	},
 
+	setItemCompleted : function(tile) {
 		tile.data('flip-model').backElement.addClass('match', 1000);
+		if ($.inArray(tile, game.data.completed) < 0) {
+			game.data.completed.push(tile);
+		}
+		game.checkEnd();
 	}
 };
 
