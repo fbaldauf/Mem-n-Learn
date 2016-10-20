@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="GERMAN">
+	<loctext id="MENU_NEW_GAME">
+		<text>Neues Spiel</text>
+	</loctext>
+	<loctext id="MENU_USER_STATS">
+		<text>Statistiken</text>
+	</loctext>
+	<loctext id="MENU_LOGOUT">
+		<text>Logout</text>
+	</loctext>
+	<loctext id="DASHBOARD_TITLE">
+		<text>Dashboard</text>
+	</loctext>
+	<loctext id="WELCOME">
+		<text>Herzlich Willkommen %s</text>
+	</loctext>
+	<loctext id="SELECT_LANGUAGE">
+		<text>Sprache auswählen</text>
+	</loctext>
+	<loctext id="CURRENT_LANGUAGE">
+		<text>Ihre aktuelle Sprache ist</text>
+	</loctext>
+	<loctext id="GAME_TITLE">
+		<text>Memory</text>
+	</loctext>
+	<loctext id="SOUND_MUTE">
+		<text>Stummschalten</text>
+	</loctext>
+	<loctext id="ELAPSED_TIME">
+		<text>Abgelaufene Zeit</text>
+	</loctext>
+	<loctext id="STATS_TITLE">
+		<text>Dies sind die Ergebnisse von %s!</text>
+	</loctext>
+	<loctext id="STATS_FAST">
+		<text>Dein schnellstes Ergebnis</text>
+	</loctext>
+	<loctext id="STATS_GAMECOUNT">
+		<text>Anzahl Spiele</text>
+	</loctext>
+	<loctext id="STATS_DOWNLOAD">
+		<text>PDF herunterladen</text>
+	</loctext>
+	<loctext id="STATS_SUBTITLE">
+		<text>Deine Spiele</text>
+	</loctext>
+	<loctext id="STATS_TABLE_NUMBER">
+		<text>Nr.</text>
+	</loctext>
+	<loctext id="STATS_TABLE_DATE">
+		<text>Datum</text>
+	</loctext>
+	<loctext id="STATS_TABLE_SCORE">
+		<text>Zeit</text>
+	</loctext>
+</language>

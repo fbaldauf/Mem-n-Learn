@@ -1,27 +1,35 @@
 <?php
+/**
+ * Klasse zum Laden der PHP-Klassen
+ */
 class Autoloader {
-	private static $basisPfad = null;
 
+	/**
+	 * Durchsucht ein Verzeichnis nach einer Datei mit dem Namen der gewünschten Klasse
+	 * @param string $klasse Name der zu ladenen Klasse
+	 */
 	public static function autoload($klasse) {
-		if (self::$basisPfad === null)
-			self::$basisPfad = dirname(__FILE__);
+		$basisPfad = dirname(__FILE__);
 
 		if (strpos($klasse, '.') !== false || strpos($klasse, '/') !== false || strpos($klasse, '\\') !== false || strpos($klasse, ':') !== false) {
+			// Klasse hat einen ungültigen Namen
 			return;
 		}
-		// $teile = preg_split('/(?<=.)(?=\p{Lu}\P{Lu})|(?<=\P{Lu})(?=\p{Lu})/U', substr($klasse, 8));
-		// $pfad = self::$basisPfad . DIRECTORY_SEPARATOR . join(DIRECTORY_SEPARATOR, $teile) . '.php';
 
-		$pfad = self::$basisPfad . DS . 'entities' . DS . $klasse . '.php';
+		// Erst im Verzeichnis "entities" suchen
+		$pfad = $basisPfad . DS . 'entities' . DS . $klasse . '.php';
 
-		if (!file_exists($pfad)){
-			$pfad = self::$basisPfad . DIRECTORY_SEPARATOR . $klasse . '.php';
+		if (!file_exists($pfad)) {
+			// Nicht im Verzeichnis "entities" gefunden, also im Hauptverzeichnis suchen
+			$pfad = $basisPfad . DIRECTORY_SEPARATOR . $klasse . '.php';
 			if (!file_exists($pfad)) {
-			echo 'Nicht gefunden: '.$pfad ;
+				// Datei der Klasse nicht gefunden
+				echo 'Nicht gefunden: ' . $pfad;
 				return;
 			}
 		}
 
+		//Datei der Klasse einbindenF
 		include_once $pfad;
 	}
 }

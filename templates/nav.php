@@ -19,13 +19,13 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="new-game"> <span class="glyphicon glyphicon-plus"
-							aria-hidden="true"></span> Neues Spiel
+							aria-hidden="true"></span> <?php echo $this->_('MENU_NEW_GAME');?>
 					</a></li>
 					<li><a href="statistic"><span class="glyphicon glyphicon-info-sign"
-							aria-hidden="true"></span> Meine Statistiken</a></li>
+							aria-hidden="true"></span> <?php echo $this->_('MENU_USER_STATS');?></a></li>
 
 
-					<li><a href="logout">Logout</a></li>
+					<li><a href="logout"><?php echo $this->_('MENU_LOGOUT');?></a></li>
 				</ul>
 			</div>
 
