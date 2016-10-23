@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="ENGLISH">
+	<loctext id="MENU_NEW_GAME">
+		<text>New Game</text>
+	</loctext>
+	<loctext id="MENU_USER_STATS">
+		<text>Statistics</text>
+	</loctext>
+	<loctext id="MENU_LOGOUT">
+		<text>Logout</text>
+	</loctext>
+	<loctext id="DASHBOARD_TITLE">
+		<text>Dashboard</text>
+	</loctext>
+	<loctext id="WELCOME">
+		<text>Welcome %s</text>
+	</loctext>
+</language>

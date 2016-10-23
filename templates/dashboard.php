@@ -1,17 +1,17 @@
 <?php
-$langs = [ 
+$langs = [
 		'german' => 'Germany-01.png',
 		'english' => 'United Kingdom-01.png',
 		'french' => 'France-01.png',
 		'spanish' => 'Spain-01.png',
-		'pashto' => 'Pakistan-01.png' 
+		'pashto' => 'Pakistan-01.png'
 ];
 ?>
 <div class="row">
 	<div class="col-lg-1"></div>
 	<div class="col-lg-10">
-		<h1>Dashboard</h1>
-		<p>Willkommen <?php echo ucfirst($this->_['username']); ?></p>
+		<h1><?php echo $this->_('DASHBOARD_TITLE');?></h1>
+		<p><?php echo $this->_('WELCOME',ucfirst($this->_['username']));?></p>
 	</div>
 </div>
 
@@ -22,9 +22,9 @@ $langs = [
 	<div class="col-lg-1"></div>
 	<div class="col-lg-10">
 		<div class="panel panel-default">
-			<div class="panel-heading">Sprache auswählen</div>
+			<div class="panel-heading"><?php echo $this->_('SELECT_LANGUAGE');?></div>
 			<div class="panel-body">
-				<p>Deine aktuelle Sprache ist: <?php echo ucfirst($_SESSION['config']->getLanguage()) ?></p>
+				<p><?php echo $this->_('CURRENT_LANGUAGE');?>: <?php echo ucfirst($_SESSION['config']->getLanguage()) ?></p>
 		<?php
 		foreach ( $langs as $l => $img ) :
 			?>
@@ -36,7 +36,7 @@ $langs = [
 							alt="<?php echo $l; ?>">
 
 					</div>
-				</a> 
+				</a>
 			<?php endforeach;?>
 		</div>
 		</div>
