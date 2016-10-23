@@ -213,6 +213,13 @@ class UserController extends AppController {
 			return false;
 		}
 		
+		// Prüfen, ob es bereits einen Benutzer mit diesem Namen gibt
+		$res = $this->query("SELECT COUNT(*) as C FROM user WHERE LOWER(name) = LOWER('$user')");
+		if ($this->fetch_object($res)->C > 0) {
+			// Es gibt bereits einen Benutzer mit diesem Namen
+			return false;
+		}
+		
 		// Neuen Benutzer in die Datenbank schreiben
 		$insert = "Insert into User(name, password) values ('$user', '" . $this->getHashForPassword ( $password ) . "')";
 		
