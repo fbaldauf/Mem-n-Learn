@@ -73,37 +73,59 @@ class AppController {
 	public function index() {
 		$view = new View();
 		$view->setTemplate('dashboard');
-		$view->assign('username', $_SESSION['username']);
+		$view->assign ( 'username', isset ( $_SESSION ['username'] ) ? $_SESSION ['username'] : '' );
 		$view->assign('devErrors', $this->checkLocale());
 		return $this->renderView($view);
 	}
-
+	
+	/**
+	 * Prüft, ob alle Lokalisierungsdateien valide und vollständig sind
+	 * @return string[] Fehlermeldungen aus XML-Validation
+	 */
 	protected function checkLocale() {
 		/** @var Configuration $conf */
-		$conf = $_SESSION['config'];
-		$file = 'locale/' . $conf->getLanguage() . '.xml';
-		$allLocs = [];
-		$currLoc=[];
-		if (is_file($file)) {
-			$dir='locale';
-			$files = scandir($dir);
-			foreach ($files as $f) {
-				if($f !== '.' && $f !='..') {
-					$fObj = fopen($dir.DS.$f,'r');
-					$xml = new SimpleXMLElement(fread($fObj, filesize($dir.DS.$f)));
-					foreach ($xml->children() as $c){
-						$allLocs[(string)$c->attributes()->id] = '_';
-						if(strtolower($f)==strtolower($conf->getLanguage().'.xml')) {
-							$currLoc[(string)$c->attributes()->id] = '_';
-						}
+		$conf = $_SESSION ['config'];
+		$allLocs = [ ];
+		$currLoc = [ ];
+		$valErrors = [ ];
+		$dir = 'locale';
+		foreach ( glob ( $dir . DS . '*.xml' ) as $f ) {
+			if ($f !== '.' && $f != '..') {
+				$fObj = fopen ( $f, 'r' );
+				libxml_use_internal_errors ( true );
+				libxml_clear_errors ();
+				$xml = simplexml_load_file ( $f );
+				
+				if (sizeof ( libxml_get_errors () ) > 0) {
+					foreach ( libxml_get_errors () as $error ) {
+						$valErrors ['Ungültige XML Datei: ' . $f . ': ' . $error->message . 'Line: ' . $error->line] = '';
 					}
-					fclose($fObj);
+					continue;
 				}
+				
+				$dom = new DOMDocument ();
+				$dom->loadXML ( $xml->asXML () );
+				
+				libxml_clear_errors ();
+				@$dom->schemaValidate ( 'locale/locale.xsd' );
+				$errors = libxml_get_errors ();
+				foreach ( $errors as $error ) {
+					$valErrors ['XML Validation Error: ' . $f . ': ' . $error->message . 'Line: ' . $error->line] = '';
+				}
+				libxml_clear_errors ();
+				
+				foreach ( $xml->children () as $c ) {
+					$allLocs [( string ) $c->attributes ()->id] = '_';
+					if (strtolower ( $f ) == strtolower ( $dir . DS . $conf->getLanguage () . '.xml' )) {
+						$currLoc [( string ) $c->attributes ()->id] = '_';
+					}
+				}
+				fclose ( $fObj );
 			}
-
-			//Jetzt alle Einträge mit der aktuell ausgewähten Sprache vergleichen
-			return array_diff_key( $allLocs,$currLoc);
 		}
+		
+		// Jetzt alle Einträge mit der aktuell ausgewähten Sprache vergleichen
+		return array_merge ( $valErrors, array_diff_key ( $allLocs, $currLoc ) );
 	}
 
 	/**

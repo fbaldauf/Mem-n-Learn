@@ -4,21 +4,21 @@
         <div class="alert alert-danger"><?php echo $this->_['errmessage']; ?></div>
     <?php } ?>
     
-            <h1>Login</h1>
+            <h1><?php echo $this->_('LOGIN_TITLE') ?></h1>
 
 	<form action="." method="POST">
 		<div class="form-group">
-			<label for="txtUser">Benutzername:</label> <input type="text"
+			<label for="txtUser"><?php echo $this->_('LOGIN_USERNAME') ?>:</label> <input type="text"
 				class="form-control" id="txtUser" name="user">
 		</div>
 		<div class="form-group">
-			<label for="txtPwd">Password:</label> <input type="password"
+			<label for="txtPwd"><?php echo $this->_('LOGIN_PASSWORD') ?>:</label> <input type="password"
 				class="form-control" id="txtPwd" name="password">
 		</div>
-		<button type="submit" class="btn btn-default">Login</button>
+		<button type="submit" class="btn btn-default"><?php echo $this->_('LOGIN_SUBMIT') ?></button>
 	</form>
 
-	<a href="register">Registrieren</a>
+	<a href="register"><?php echo $this->_('LOGIN_REGISTER') ?></a>
 </div>
 <!-- 
             <table>

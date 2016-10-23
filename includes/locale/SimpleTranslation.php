@@ -7,6 +7,7 @@ class SimpleTranslation {
 
 	function loadTranslationFile($file) {
 		if (is_file($file)) {
+			libxml_use_internal_errors(true);
 			if ($this->xml = simplexml_load_file($file)) {
 				return true;
 			}
