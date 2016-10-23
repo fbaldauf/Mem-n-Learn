@@ -21,6 +21,20 @@ $langs = [
 <div class="row" style="margin-top: 1vw">
 	<div class="col-lg-1"></div>
 	<div class="col-lg-10">
+    <?php //TODO entfernen
+		if (sizeof($this->_['devErrors'])>0) :
+	?>
+        <div class="panel panel-default">
+            <div class="panel-heading">Fehlende Lokalisierungen:</div>
+            <div class="panel-body">
+                <ul>
+                <?php foreach ($this->_['devErrors'] as $key => $val) : ?>
+                    <li><?php echo $key; ?></li>
+                <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    <?php endif; ?>
 		<div class="panel panel-default">
 			<div class="panel-heading"><?php echo $this->_('SELECT_LANGUAGE');?></div>
 			<div class="panel-body">

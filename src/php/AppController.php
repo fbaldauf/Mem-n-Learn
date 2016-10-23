@@ -68,47 +68,42 @@ class AppController {
 	}
 
 	/**
-	 * Methode zum anzeigen des Contents.
-	 * @return String Content der Applikation.
-	 */
-	// public function execute() {
-	// var_dump($this->request);//die();
-	// $view = new View();
-	// switch ($this->template) {
-	// case 'entry':
-	// $view->setTemplate('entry');
-	// $entryid = $this->request['id'];
-	// $entry = Model::getEntry($entryid);
-	// $view->assign('title', $entry['title']);
-	// $view->assign('content', $entry['content']);
-	// break;
-
-	// case 'json':
-	// return new JavaScriptResponse();
-	// break;
-
-	// case 'default':
-	// default:
-	// $entries = Model::getEntries();
-	// $view->setTemplate('game');
-	// $view->assign('entries', $entries);
-	// }
-
-	// $this->view->setTemplate('main');
-	// $this->view->assign('footer', '');
-	// $this->view->assign('menu', $this->getMenu());
-	// $this->view->assign('content', $view->loadTemplate());
-	// return $this->view->loadTemplate();
-	// }
-
-	/**
 	 * Zeigt das Dashboard an
 	 */
 	public function index() {
 		$view = new View();
 		$view->setTemplate('dashboard');
 		$view->assign('username', $_SESSION['username']);
+		$view->assign('devErrors', $this->checkLocale());
 		return $this->renderView($view);
+	}
+
+	protected function checkLocale() {
+		/** @var Configuration $conf */
+		$conf = $_SESSION['config'];
+		$file = 'locale/' . $conf->getLanguage() . '.xml';
+		$allLocs = [];
+		$currLoc=[];
+		if (is_file($file)) {
+			$dir='locale';
+			$files = scandir($dir);
+			foreach ($files as $f) {
+				if($f !== '.' && $f !='..') {
+					$fObj = fopen($dir.DS.$f,'r');
+					$xml = new SimpleXMLElement(fread($fObj, filesize($dir.DS.$f)));
+					foreach ($xml->children() as $c){
+						$allLocs[(string)$c->attributes()->id] = '_';
+						if(strtolower($f)==strtolower($conf->getLanguage().'.xml')) {
+							$currLoc[(string)$c->attributes()->id] = '_';
+						}
+					}
+					fclose($fObj);
+				}
+			}
+
+			//Jetzt alle Einträge mit der aktuell ausgewähten Sprache vergleichen
+			return array_diff_key( $allLocs,$currLoc);
+		}
 	}
 
 	/**
