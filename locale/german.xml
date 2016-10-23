@@ -24,6 +24,15 @@
 	<loctext id="GAME_TITLE">
 		<text>Memory</text>
 	</loctext>
+	<loctext id="GAME_TIME_PAUSED">
+		<text>Zeit gestoppt</text>
+	</loctext>
+	<loctext id="GAME_REPEAT_WORD">
+		<text>Bitte wiederhole:</text>
+	</loctext>
+	<loctext id="GAME_REPEAT_CLOSE">
+		<text>Schließen</text>
+	</loctext>
 	<loctext id="SOUND_MUTE">
 		<text>Stummschalten</text>
 	</loctext>
@@ -53,6 +62,9 @@
 	</loctext>
 	<loctext id="STATS_TABLE_SCORE">
 		<text>Zeit</text>
+	</loctext>
+	<loctext id="STATS_TABLE_FLIPS">
+		<text>Anzahl der Versuche</text>
 	</loctext>
 	<loctext id="GAME_OVER_SCORE">
 		<text>Deine benötigte Zeit</text>
