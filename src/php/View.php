@@ -28,7 +28,7 @@ class View {
 	}
 
 	protected function loadTranslation() {
-		$lang = 'german';
+		$lang = 'english';
 		if (isset($_SESSION)) {
 			/** @var Configuration $conf */
 			$conf = @$_SESSION['config'];
@@ -45,8 +45,12 @@ class View {
 	}
 
 	public function _($txt) {
-		/** @var Configuration $conf */
-		$conf = $_SESSION['config'];
+		$lang = 'english';
+		if (isset($_SESSION['config'])) {
+			/** @var Configuration $conf */
+			$conf = $_SESSION['config'];
+			$lang = $conf->getLanguage();
+		}
 		if ($this->trans == null) {
 			$this->loadTranslation();
 		}
@@ -60,7 +64,7 @@ class View {
 		// call_user_func_array(array($this, $f), $a);
 		// }
 
-		$params = [$conf->getLanguage()];
+		$params = [$lang];
 		$params = array_merge($params, func_get_args());
 
 		return call_user_func_array([$this->trans, 'printText'], $params);
