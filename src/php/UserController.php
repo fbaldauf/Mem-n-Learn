@@ -169,7 +169,7 @@ class UserController extends AppController {
 		$this->query ( 'UPDATE user SET password=\'' . $this->getHashForPassword ( $password ) . '\' WHERE password=\'' . $password . '\' AND LOWER(name)=LOWER(\'' . $user . '\')' );
 		
 		// Prüfe, ob es einen Benutzer mit dem angegebenen Passwortes gibt
-		$abfrage = "SELECT name, password, userID FROM user WHERE LOWER(name) = LOWER('$user') AND password = '" . $this->getHashForPassword ( $password ) . "'";
+		$abfrage = "SELECT * FROM user WHERE LOWER(name) = LOWER('$user') AND password = '" . $this->getHashForPassword ( $password ) . "'";
 		
 		if (! $res = $this->query ( $abfrage )) {
 			echo $this->view->_ ( "LOGIN_ERROR" );
@@ -184,10 +184,23 @@ class UserController extends AppController {
 			$_SESSION ['eingeloggt'] = true;
 			$_SESSION ['username'] = $user;
 			$_SESSION ['ID'] = $row->userID;
+			$this->setUserSettings($row);
 		}
 		
 		// Ergebnis des Logins muss sein, dass nun ein Benutzer angemeldet ist
 		return $this->isLoggedIn ();
+	}
+	
+	/**
+	 * Setzt die benutzerspezifischen Einstellungen
+	 * @param object $user Einstellungen des Benutzers
+	 */
+	protected function setUserSettings($user) {
+		if (strlen($user->language) > 0) {
+			/** @var Configuration $conf */
+			$conf = $_SESSION['config'];
+			$conf->setLanguage($user->language);
+		}
 	}
 	
 	/**

@@ -204,6 +204,17 @@ class AppController {
 				}
 			}
 		}
+		
+		// Sprache Userabhängig ist im Nachhinein hinzugekommen
+		$res = $this->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '$this->db' AND TABLE_NAME = 'user' AND COLUMN_NAME = 'language'");
+		if (null === $this->fetch_object($res)) {
+			// Spalte existiert noch nicht
+			if (!$this->query("ALTER TABLE user ADD language VARCHAR(50) DEFAULT 'english'")) {
+				// Die Tabelle konnte nicht geändert werden
+				echo $sql;
+				return false;
+			}
+		}
 		return true;
 	}
 
@@ -360,7 +371,13 @@ class AppController {
 			$lang = substr($lang, 5);
 		}
 
-		$_SESSION['config']->setLanguage($lang);
+		/** @var  Configuration $conf */
+		$conf = $_SESSION['config']; 
+		$conf->setLanguage($lang);
+		
+		$sql = "UPDATE user SET language = '". $conf->getLanguage() . "' WHERE LOWER(name) = LOWER('".$_SESSION['username']."')";
+		$this->query($sql);
+		
 		return $this->index();
 	}
 }

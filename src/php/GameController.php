@@ -37,7 +37,7 @@ class GameController extends AppController {
 		$this->view->setTemplate('game');
 		$this->view->assign('cards', $this->getCards());
 
-		// Die View für den Container einer KArte festlegen
+		// Die View für den Container einer Karte festlegen
 		$cardContainer = new View('cardContainer');
 
 		// Die Rückgabe ist eine JavaScriptResponse im JSON-Format, die von Javascript ausgelesen werden kann.
