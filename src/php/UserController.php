@@ -51,7 +51,7 @@ class UserController extends AppController {
 		$data['countGames'] = $row->Anzahl;
 
 		// Alle Spiele
-		$sql = "SELECT date, totaltime, TIME_TO_SEC(totaltime) / 60 as timeMinutes FROM `result` WHERE F_userID = '$sessionuserID' ORDER By date asc";
+		$sql = "SELECT date, totaltime, TIME_TO_SEC(totaltime) / 60 as timeMinutes, flips FROM `result` WHERE F_userID = '$sessionuserID' ORDER By date asc";
 		$ergebnistabellerow = $this->query($sql);
 		$data['games'] = [];
 			
@@ -66,7 +66,9 @@ class UserController extends AppController {
 					// Benötigte Zeit auf Minuten gerundet
 					'timeMinutes' => $row->timeMinutes,
 					// Datum des Spieles
-					'dateObj' => $tmpDate 
+					'dateObj' => $tmpDate,
+					// Anzahl der benötigten Versuche
+					'flips' => $row->flips
 			];
 		}
 
@@ -340,8 +342,7 @@ class UserController extends AppController {
 			// Datum im Format, welches von XSL-FO verstanden werden kann (2000-01-01)
 			$result->addChild ( 'date', $game ['dateObj']->format ( 'Y-m-d' ) );
 			$result->addChild ( 'time', $game ['time'] );
-			// TODO: Hier ist noch eine Konstante, da diese Daten noch nicht gespeichert werden
-			$result->addChild ( 'flips', 5 );
+			$result->addChild ( 'flips', $game ['flips'] );
 		}
 		
 		// XML gegen XSD validieren

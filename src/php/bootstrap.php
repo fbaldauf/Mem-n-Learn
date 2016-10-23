@@ -71,8 +71,3 @@ else {
 	header('HTTP/1.1 404 Not Found');
 	die('Die Seite wurde nicht gefunden!<br />Request: ' . $uri . '<br /><pre>' . var_export(array_merge($_GET, $_POST), true) . '</pre>');
 }
-
-//TODO: Wird das benötigt?
-function t($txt) {
-	$_SESSION['config']->printText($txt);
-}

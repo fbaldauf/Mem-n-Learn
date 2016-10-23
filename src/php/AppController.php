@@ -199,7 +199,6 @@ class AppController {
 				// Die Tabelle existiert noch nicht -> anlegen
 				if (!$this->query($sql)) {
 					// Die Tabelle konnte nicht angelegt werden
-					echo $sql;
 					return false;
 				}
 			}
@@ -211,7 +210,16 @@ class AppController {
 			// Spalte existiert noch nicht
 			if (!$this->query("ALTER TABLE user ADD language VARCHAR(50) DEFAULT 'english'")) {
 				// Die Tabelle konnte nicht geändert werden
-				echo $sql;
+				return false;
+			}
+		}
+		
+		//Spalte flips ist im Nachhinein hinzugekommen
+		$res = $this->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '$this->db' AND TABLE_NAME = 'result' AND COLUMN_NAME = 'flips'");
+		if (null === $this->fetch_object($res)) {
+			// Spalte existiert noch nicht
+			if (!$this->query("ALTER TABLE result ADD flips INT DEFAULT -1")) {
+				// Die Tabelle konnte nicht geändert werden
 				return false;
 			}
 		}
