@@ -42,10 +42,12 @@ foreach ($rules as $action => $rule) {
 			if (strtolower($uri) === '/register') {
 				// Registrierung wird aufgerufen
 				echo $user->register();
+				die();
 			}
 			else {
 				// -> Zur Loginseite weiterleiten
 				echo $user->login();
+				die();
 			}
 		}
 		// Login Ende

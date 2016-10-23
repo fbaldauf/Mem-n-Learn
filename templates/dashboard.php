@@ -22,10 +22,10 @@ $langs = [
 	<div class="col-lg-1"></div>
 	<div class="col-lg-10">
     <?php //TODO entfernen
-		if (sizeof($this->_['devErrors'])>0) :
+		if (isset($this->_['devErrors']) AND sizeof($this->_['devErrors'])>0) :
 	?>
         <div class="panel panel-default">
-            <div class="panel-heading">Fehlende Lokalisierungen:</div>
+            <div class="panel-heading">Fehlende Lokalisierungen und XML-Fehler:</div>
             <div class="panel-body">
                 <ul>
                 <?php foreach ($this->_['devErrors'] as $key => $val) : ?>

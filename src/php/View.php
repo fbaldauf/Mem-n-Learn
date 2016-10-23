@@ -44,7 +44,7 @@ class View {
 		$this->trans = $langObj;
 	}
 
-	protected function _($txt) {
+	public function _($txt) {
 		/** @var Configuration $conf */
 		$conf = $_SESSION['config'];
 		if ($this->trans == null) {

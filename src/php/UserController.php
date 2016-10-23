@@ -57,7 +57,7 @@ class UserController extends AppController {
 		if (isset($this->request['user']) and isset($this->request['password'])) {
 			$check = $this->checkLogin($this->request['user'], $this->request['password']);
 			if (!$check) {
-				$this->view->assign('errmessage', 'Fehlerhafter Login');
+				$this->view->assign('errmessage', $this->view->_("LOGIN_ERROR"));
 			}
 		}
 
@@ -74,6 +74,7 @@ class UserController extends AppController {
 
 	public function logout() {
 		$_SESSION['eingeloggt'] = false;
+		session_destroy();
 
 		$this->view = new View();
 		$this->view->setTemplate('login');
@@ -126,7 +127,7 @@ class UserController extends AppController {
 		// $status = $stmt->execute ();
 
 		if (!$res = $this->query($abfrage)) {
-			echo "Abfrage fehlgeschlagen.";
+			echo $this->view->_("LOGIN_ERROR");
 		}
 
 		if (!$row = $this->fetch_object($res))

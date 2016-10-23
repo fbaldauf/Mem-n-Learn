@@ -15,4 +15,34 @@
 	<loctext id="WELCOME">
 		<text>Welcome %s</text>
 	</loctext>
+	<loctext id="LOGIN_ERROR">
+		<text>Login failed! Username or password incorrect.</text>
+	</loctext>
+	<loctext id="LOGIN_TITLE">
+		<text>Sign In</text>
+	</loctext>
+	<loctext id="LOGIN_USERNAME">
+		<text>Username</text>
+	</loctext>
+	<loctext id="LOGIN_PASSWORD">
+		<text>Password</text>
+	</loctext>
+	<loctext id="LOGIN_REGISTER">
+		<text>Sign Up</text>
+	</loctext>
+	<loctext id="LOGIN_SUBMIT">
+		<text>Sign In</text>
+	</loctext>
+	<loctext id="REGISTER_TITLE">
+		<text>Sign Up</text>
+	</loctext>
+	<loctext id="REGISTER_USERNAME">
+		<text>Username</text>
+	</loctext>
+	<loctext id="REGISTER_PASSWORD">
+		<text>Password</text>
+	</loctext>
+	<loctext id="REGISTER_SUBMIT">
+		<text>Sign Up</text>
+	</loctext>
 </language>
