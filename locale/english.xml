@@ -48,4 +48,7 @@
 	<loctext id="REGISTER_ERROR">
 		<text>Registration failed. Try Again!</text>
 	</loctext>
+	<loctext id="REGISTER_TO_LOGIN">
+		<text>Back to Sign In</text>
+	</loctext>
 </language>
