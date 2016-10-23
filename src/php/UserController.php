@@ -74,6 +74,7 @@ class UserController extends AppController {
 
 	public function logout() {
 		$_SESSION['eingeloggt'] = false;
+		session_destroy();
 
 		$this->view = new View();
 		$this->view->setTemplate('login');
