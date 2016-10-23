@@ -54,4 +54,10 @@
 	<loctext id="STATS_TABLE_SCORE">
 		<text>Zeit</text>
 	</loctext>
+	<loctext id="GAME_OVER_SCORE">
+		<text>Deine benötigte Zeit</text>
+	</loctext>
+	<loctext id="GAME_OVER_TEXT">
+		<text>Herzlichen Glückwunsch!</text>
+	</loctext>
 </language>
