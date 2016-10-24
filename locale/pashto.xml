@@ -66,9 +66,6 @@
 	<loctext id="GAME_REPEAT_WORD">
 		<text>Bitte wiederhole:</text>
 	</loctext>
-	<loctext id="GAME_FLIPS">
-		<text>Anzahl Versuche</text>
-	</loctext>
 	<loctext id="GAME_REPEAT_CLOSE">
 		<text>Schließen</text>
 	</loctext>

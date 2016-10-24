@@ -10,6 +10,7 @@
 	<div class="col-lg-10">
 		<!-- <button><?php echo $this->_('SOUND_MUTE');?></button>-->
 		<span><?php echo $this->_('ELAPSED_TIME');?>: <span class="expired-time">00:00:00</span></span>
+		<span><?php echo $this->_('GAME_FLIPS');?>: <span class="count-flips">0</span></span>
 	</div>
 </div>
 

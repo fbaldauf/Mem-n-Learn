@@ -111,10 +111,12 @@ class UserController extends AppController {
 	public function logout() {
 		// Aktuelle Session zurücksetzen
 		$_SESSION['eingeloggt'] = false;
+		$_SESSION = null;
 		session_destroy();
 
 		// Auf Login weiterleiten
 		$this->view = new View();
+		$this->view->resetTranslation();
 		$this->view->setTemplate('login');
 		return $this->renderView();
 	}

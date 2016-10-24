@@ -1,5 +1,4 @@
 function initChart(data) {
-
     var dim = [];
     $.each(data.data.games, function(key, value) {
 	dim.push(value.date);
@@ -12,7 +11,7 @@ function initChart(data) {
 
     $('#container').highcharts({
 	title: {
-	    text: 'Lernverlauf',
+	    text: data.title,
 	    x: -20
 	// center
 	},
@@ -25,7 +24,7 @@ function initChart(data) {
 	},
 	yAxis: {
 	    title: {
-		text: 'Minuten'
+		text: data.unit
 	    },
 	    plotLines: [{
 		value: 0,

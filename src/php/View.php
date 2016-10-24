@@ -26,6 +26,13 @@ class View {
 	public function __construct1($template) {
 		$this->setTemplate($template);
 	}
+	
+	/**
+	 * Setzt die aktuell benutzte Sprache zurück
+	 */
+	public function resetTranslation() {
+		$this->trans = null;
+	}
 
 	protected function loadTranslation() {
 		$lang = 'english';
@@ -52,6 +59,8 @@ class View {
 			$lang = $conf->getLanguage();
 		}
 		if ($this->trans == null) {
+			$this->loadTranslation();
+		} elseif ($this->trans->getTrans() !== $lang) {
 			$this->loadTranslation();
 		}
 		if ($this->trans == null) {

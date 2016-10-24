@@ -4,6 +4,7 @@
 
 class SimpleTranslation {
 	var $xml;
+	var $trans;
 
 	function loadTranslationFile($file) {
 		if (is_file($file)) {
@@ -16,6 +17,7 @@ class SimpleTranslation {
 			echo "Die Datei " . $file . " konnte nicht geladen werden!<br />";
 			// break;
 		}
+		$this->trans = $file;
 	}
 
 	function printText($lang, $txt_id) {
@@ -60,5 +62,9 @@ class SimpleTranslation {
 			echo "Bitte laden Sie zuerst eine Übersetzungsdatei!";
 		}
 		return $res;
+	}
+	
+	function getTrans() {
+		return $this->trans;
 	}
 }

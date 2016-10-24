@@ -1,114 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language id="GERMAN">
+<language id="SPANISH">
 	<loctext id="MENU_NEW_GAME">
-		<text>Neues Spiel</text>
+		<text>Nuevo juego</text>
 	</loctext>
 	<loctext id="MENU_USER_STATS">
-		<text>Statistiken</text>
+		<text>Estadísticas</text>
 	</loctext>
 	<loctext id="MENU_LOGOUT">
-		<text>Logout</text>
+		<text>Cierre de sesión</text>
 	</loctext>
 	<loctext id="DASHBOARD_TITLE">
 		<text>Dashboard</text>
 	</loctext>
 	<loctext id="WELCOME">
-		<text>Herzlich Willkommen %s</text>
+		<text>Bienvenido a %s</text>
 	</loctext>
 		<loctext id="LOGIN_ERROR">
-		<text>Login fehlgeschlagen! Benutzername oder Passwort nicht korrekt.</text>
+		<text>Error de inicio de sesión. Nombre de usuario o contraseña no correcta.</text>
 	</loctext>
 	<loctext id="LOGIN_TITLE">
-		<text>Anmelden</text>
+		<text>Inicio de sesión</text>
 	</loctext>
 	<loctext id="LOGIN_USERNAME">
-		<text>Benutzername</text>
+		<text>Nombre de usuario</text>
 	</loctext>
 	<loctext id="LOGIN_PASSWORD">
-		<text>Passwort</text>
+		<text>Contraseña</text>
 	</loctext>
 	<loctext id="LOGIN_REGISTER">
-		<text>Registrierung</text>
+		<text>Registro</text>
 	</loctext>
 	<loctext id="LOGIN_SUBMIT">
-		<text>Anmelden</text>
+		<text>Inicio de sesión</text>
 	</loctext>
 	<loctext id="REGISTER_TITLE">
-		<text>Registrierung</text>
+		<text>Registro</text>
 	</loctext>
 	<loctext id="REGISTER_USERNAME">
-		<text>Benutzername</text>
+		<text>Nombre de usuario</text>
 	</loctext>
 	<loctext id="REGISTER_PASSWORD">
-		<text>Passwort</text>
+		<text>Contraseña</text>
 	</loctext>
 	<loctext id="REGISTER_SUBMIT">
-		<text>Anmelden</text>
+		<text>Inicio de sesión</text>
 	</loctext>
 	<loctext id="REGISTER_ERROR">
-		<text>Registrierung fehlerhaft. Versuchen Sie es erneut! </text>
+		<text>Registro corrupto. ¡Inténtelo de nuevo! </text>
 	</loctext>
 	<loctext id="REGISTER_TO_LOGIN">
-		<text>Zurück zur Anmeldung</text>
+		<text>Volver a registro</text>
 	</loctext>
 	<loctext id="SELECT_LANGUAGE">
-		<text>Sprache auswählen</text>
+		<text>Seleccionar idioma</text>
 	</loctext>
 	<loctext id="CURRENT_LANGUAGE">
-		<text>Ihre aktuelle Sprache ist</text>
+		<text>Su actual idioma es</text>
 	</loctext>
 	<loctext id="GAME_TITLE">
 		<text>Memory</text>
 	</loctext>
 	<loctext id="GAME_TIME_PAUSED">
-		<text>Zeit gestoppt</text>
+		<text>Tiempo parado</text>
 	</loctext>
 	<loctext id="GAME_REPEAT_WORD">
-		<text>Bitte wiederhole:</text>
-	</loctext>
-	<loctext id="GAME_FLIPS">
-		<text>Anzahl Versuche</text>
+		<text>Por favor, repita:</text>
 	</loctext>
 	<loctext id="GAME_REPEAT_CLOSE">
-		<text>Schließen</text>
+		<text>Cerrar</text>
+	</loctext>
+	<loctext id="GAME_FLIPS">
+		<text>Número de intentos de</text>
 	</loctext>
 	<loctext id="SOUND_MUTE">
-		<text>Stummschalten</text>
+		<text>Sonido apagado</text>
 	</loctext>
 	<loctext id="ELAPSED_TIME">
-		<text>Abgelaufene Zeit</text>
+		<text>Tiempo transcurrido</text>
 	</loctext>
 	<loctext id="STATS_TITLE">
-		<text>Dies sind die Ergebnisse von %s!</text>
+		<text>Estos son los resultados de %s!</text>
 	</loctext>
 	<loctext id="STATS_FAST">
-		<text>Dein schnellstes Ergebnis</text>
+		<text>Su resultado más rápido</text>
 	</loctext>
 	<loctext id="STATS_GAMECOUNT">
-		<text>Anzahl Spiele</text>
+		<text>Juegos de números</text>
 	</loctext>
 	<loctext id="STATS_DOWNLOAD">
-		<text>PDF herunterladen</text>
+		<text>PDF Descargar</text>
 	</loctext>
 	<loctext id="STATS_SUBTITLE">
-		<text>Deine Spiele</text>
+		<text>Tus juegos</text>
 	</loctext>
 	<loctext id="STATS_TABLE_NUMBER">
-		<text>Nr.</text>
+		<text>No.</text>
 	</loctext>
 	<loctext id="STATS_TABLE_DATE">
-		<text>Datum</text>
+		<text>Fecha</text>
 	</loctext>
 	<loctext id="STATS_TABLE_SCORE">
-		<text>Zeit</text>
+		<text>Tiempo</text>
 	</loctext>
 	<loctext id="STATS_TABLE_FLIPS">
-		<text>Anzahl der Versuche</text>
+		<text>Número de intentos de</text>
 	</loctext>
 	<loctext id="GAME_OVER_SCORE">
-		<text>Deine benötigte Zeit</text>
+		<text>Su tiempo de</text>
 	</loctext>
 	<loctext id="GAME_OVER_TEXT">
-		<text>Herzlichen Glückwunsch!</text>
+		<text>¡Felicidades!</text>
 	</loctext>
 </language>
