@@ -51,7 +51,7 @@ class GameController extends AppController {
 
 			'defaultCard' => $this->defaultCard, // Name der Grafik, die für die Kartenrückseite genutzt werden soll
 
-			'language' => $_SESSION['config']->getLanguage()]); // Sprache, die für das Spiel genutzt werden soll
+			'language' => 'german']);//$_SESSION['config']->getLanguage()]); // Sprache, die für das Spiel genutzt werden soll
 
 		return $res;
 	}
@@ -99,7 +99,7 @@ class GameController extends AppController {
 			/** @var Configuration $conf */
 			$conf = $_SESSION['config'];
 
-			$translation = '' . $card->translations->{$conf->getLanguage()};
+			$translation = '' . $card->translations->german;//{$conf->getLanguage()};
 			$image = 'templates/img/cards/' . $card->image;
 			if ($german !== '' and $translation !== '' and $image !== '' and file_exists($image)) {
 				$cards[] = new Card($german, $translation, $image);
