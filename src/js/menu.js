@@ -96,11 +96,12 @@ var menu = {
     },
 
     switchPage: function(page, callback) {
+    	game.exitGame();
 	menu.config.container.empty();
 	menu.config.container.html(page);
 
 	if (typeof callback === 'function') {
-	    callback(menu.config.container);
+		callback(menu.config.container);
 	}
 
 	// TODO: Für später: Adressleiste aktualisieren

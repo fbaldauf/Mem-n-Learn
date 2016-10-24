@@ -3,6 +3,13 @@ var game = {
 	settings : {
 		mute : false
 	},
+	
+	components: {
+		btnTwoPlayer: null,
+		dialog: null,
+		timer : null,
+		winTimer: []
+	},
 
 	data : {
 		cards : [],
@@ -13,62 +20,86 @@ var game = {
 		defaultCard : '',
 		language : '',
 		elapsedTime : 0,
-		timer : null,
-		completed : [],
-		modal: null
+		completed : []
 	},
 	init : function(settings) {
-
-		// menu.data = {
-
-		// cards: [],
-		// turn: 0,
-		// openCards: 0
-		// };
-
 		// Standardwerte mit Parametern überschreiben
 		$.extend(game.data, settings);
 		game.data.openCards = [];
+		game.data.completed = [];
 		game.data.turn = 0;
+		game.components.winTimer = [];
 
 		game.addCards();
 		game.preloadImages();
 		// game.data.nav.mute.flip();
-
-		game.startTimer();
+		
+		game.pauseTimer();
+		game.initSecondPlayer();
+		game.components.modal = null;
+		$(game).on('exit', game.removeWinTimers);
 	},
 	
 	getDialog : function() {
-		if (game.data.modal == null) {
-			game.data.modal = $('#myModal').modal({});
+		if (game.components.modal == null) {
+			game.components.modal = $('#myModal').modal({});
 			// Beim ersten holen das Event binden
-			game.data.modal.on('hidden.bs.modal', function(e) {
+			game.components.modal.on('hidden.bs.modal', function(e) {
 				game.resumeTimer();
 				game.checkEnd();
 			});
 		}
-		return game.data.modal;
+		
+		return game.components.modal;
+	},
+	
+	showDialog: function (mode, pdata) {
+		var modal = game.getDialog();
+		data = {img:'',word:'',score:''};
+		$.extend(data, pdata);
+
+		modal.find('.modal-content').hide();
+		var content = null;
+		switch (mode) {
+		case 'score':
+			content = modal.find('#score');break;
+		case 'repeat':
+		default:
+			content = modal.find('#repeat');
+		}
+
+		content.show();
+		content.find('.modal-body .image').html(data.img);
+		content.find('.modal-body .word').html(data.word);
+		content.find('.modal-body .score').html(data.score);
+		modal.modal('show');
+		modal.modal();
+
 	},
 
 	startTimer : function() {
 		game.pauseTimer();
 		game.data.elapsedTime = 0;
-		game.resumeTimer();
+		game.resumeTimer();	
+
 	},
 	resumeTimer : function() {
-		game.data.timer = setInterval(function() {
+		game.components.timer = setInterval(function() {
 			game.addTimer();
 		}, 1000);
 	},
 	pauseTimer : function() {
-		if (game.data.timer != null) {
-			clearInterval(game.data.timer);
+		if (game.components.timer != null) {
+			clearInterval(game.components.timer);
 		}
 	},
 	addTimer : function() {
 		game.data.elapsedTime++;
+		$('.expired-time').html(game.getFormattedTimeString());
+	},
+	getFormattedTimeString: function() {
 		var t = new Date(2016, 1, 1, 0, 0, game.data.elapsedTime, 0);
-		$('.expired-time').html(t.toLocaleTimeString());
+		return t.toLocaleTimeString();
 	},
 
 	addCards : function() {
@@ -82,7 +113,7 @@ var game = {
 			list.push(wordTile);
 		});
 
-		list = shuffleArray(list);
+		//list = shuffleArray(list);
 		$(game.data.board).empty();
 
 		$.each(list, function(key, value) {
@@ -110,9 +141,16 @@ var game = {
 	flipCard : function(event) {
 		var tile = $(event.currentTarget);
 		var data = tile.data('tile');
-		game.addTurn();
-
 		var flip = tile.data("flip-model");
+		
+		if (!flip.isFlipped) {
+			game.addTurn();
+		}
+		
+		if (game.data.turn == 1) {
+			game.startTimer();
+			game.disableSecondPlayer();
+		}
 
 		if (!flip.isFlipped && game.data.openCards.length < 2) {
 			if (data.type === TILETYPE.IMAGE) {
@@ -136,13 +174,8 @@ var game = {
 					
 					var img = new Image();
 					img.src = data.card.image;
-					var modal = game.getDialog();
-
-					modal.find('.modal-body .image').html(img);
-					modal.find('.modal-body .word').html(data.card.word);
-					modal.modal('show');
-					modal.modal();
-					
+					game.showDialog('repeat', {img: img, word: data.card.word});
+										
 					var a = 'b';
 					tile.on('flip:done', {
 						obj : game.data.openCards[0]
@@ -188,18 +221,23 @@ var game = {
 		// Prüft, ob das Spiel beendet wurde
 		if (game.data.cards.length * 2 == game.data.completed.length) {
 			game.pauseTimer();
+			game.getDialog().off('hidden.bs.modal');
 			
 			// Ergebnisse speichern
 			game.saveResults();
 
 			// Anzeige der Ergebnisse
 			// TODO
+			game.showDialog('score', {score: game.getFormattedTimeString()});
+			
 			$.each(game.data.completed, function(key, item) {
-				setTimeout(function() {
+				//setTimeout(function() {
+				game.components.winTimer.push(
 					setInterval(function() {
 						item.flip('toggle');
 					}, 1000)
-				}, 500);
+				);
+				//}, 500);
 			});
 		}
 	},
@@ -229,6 +267,32 @@ var game = {
 		if ($.inArray(tile, game.data.completed) < 0) {
 			game.data.completed.push(tile);
 		}
+	},
+	
+	initSecondPlayer: function() {
+		if (game.components.btnTwoPlayer == null) {
+			game.components.btnTwoPlayer = $('#btnTwoPlayer').button().click(game.addSecondPlayer);
+		}
+	},
+	
+	addSecondPlayer: function(event) {
+		console.log(event, game.getDialog());
+		game.getDialog('login').modal('show');
+	},
+	
+	disableSecondPlayer: function() {
+		if (game.components.btnTwoPlayer != null) {
+			game.components.btnTwoPlayer.unbind('click');
+			game.components.btnTwoPlayer.attr('disabled', 'disabled');
+		}
+	},
+	exitGame: function() {
+		$(game).trigger('exit');
+	},
+	removeWinTimers: function() {
+		$.each(game.components.winTimer, function(key, value) {
+			clearInterval(value);
+		}) ;
 	}
 };
 
