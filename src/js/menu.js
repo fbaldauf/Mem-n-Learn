@@ -1,4 +1,8 @@
 var menu = {
+
+	/**
+	 * Initialisiert das Menü
+	 */
 	init : function(settings) {
 		menu.config = {
 			// Standardwerte
@@ -14,6 +18,9 @@ var menu = {
 		menu.setup();
 	},
 
+	/**
+	 * Bereitet das Menü für die Nutzung vor
+	 */
 	setup : function() {
 		// Allen Menüeinträgen das Klick-Event zuweisen
 		menu.config.items.each(function() {
@@ -21,35 +28,41 @@ var menu = {
 					function(event, o, c) {
 						// Standardroutine deaktivieren (kein HTTP-Request)
 						event.preventDefault();
-						
+
 						// Rufe showItem mit dem geklickten link auf
-						menu.showItem($(event.currentTarget).find('[href]').attr('href'));
+						menu.showItem($(event.currentTarget).find('[href]')
+								.attr('href'));
 					});
 		});
 	},
 
+	/**
+	 * Event-Handler für das Klicken auf ein Menüelement
+	 */
 	showItem : function(target) {
 		switch (target) {
 		case '#':
 			// Nichts unternehmen
 			break;
+			
 		case 'new-game':
 			menu.newGame();
 			break;
-		case 'statistic':
-			menu.showStats();
-			break;
+			
 		case 'logout':
 			menu.setActive(false);
 			// GET request ausführen
 			$.get(target, null, menu.switchPage);
 			break;
+			
 		default:
-			// console.log('Kein spezifischer Handler für ', target);
 			$.get(target, null, menu.switchPage);
 		}
 	},
 
+	/**
+	 * Neues Spiel starten
+	 */
 	newGame : function() {
 		$.ajax({
 			type : 'GET',
@@ -60,46 +73,28 @@ var menu = {
 			success : function(page) {
 				page = $.parseJSON(page);
 				menu.switchPage(page.view, function(container) {
+					// Nachdem die Seite geladen ist, das Spiel initialisieren
 					game.init({
 						cards : page.cards,
 						cardContainer : page.cardContainer,
 						board : $('#thumb-wrap'),
 						defaultCard : page.defaultCard,
 						language : page.language,
-						nav : {
-							mute : $('#mute')
-						}
 					});
 				});
 			}
 		});
-		
-	},
 
-	showStats : function() {
-		$.ajax({
-			type : 'GET',
-			url : 'statistic',
-			data : {
-
-			},
-			success : function(page) {
-				// page = $.parseJSON(page);
-				menu.switchPage(page/* .view */, function(container) {
-					// initChart(page);
-				});
-			},
-		});
 	},
 
 	/**
 	 * Wird immer aufgerufen, wenn die Seite gewechselt wird
 	 */
 	switchPage : function(page, callback) {
-		// Beende ein Spiel 
+		// Beende ein Spiel
 		game.exitGame();
-		
-		// Tausche den Inhalt der Seite 
+
+		// Tausche den Inhalt der Seite
 		menu.config.container.empty();
 		menu.config.container.html(page);
 
@@ -108,10 +103,12 @@ var menu = {
 			callback(menu.config.container);
 		}
 	},
-	
+
 	/**
 	 * Aktiviert oder deaktiviert alle Menüpunkte
-	 * @param bool active Sollen die Menüpunkte aktiviert werden
+	 * 
+	 * @param bool
+	 *            active Sollen die Menüpunkte aktiviert werden
 	 */
 	setActive : function(active) {
 		// Alle Menüpunkte durchgehen
