@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="ARABIC">
+	<loctext id="MENU_NEW_GAME">
+		<text>لعبة جديدة</text>
+	</loctext>
+	<loctext id="MENU_USER_STATS">
+		<text>إحصائيات</text>
+	</loctext>
+	<loctext id="MENU_LOGOUT">
+		<text>تسجيل الخروج</text>
+	</loctext>
+	<loctext id="DASHBOARD_TITLE">
+		<text>المعلومات</text>
+	</loctext>
+	<loctext id="WELCOME">
+		<text>مرحبا بكم في %s</text>
+	</loctext>
+		<loctext id="LOGIN_ERROR">
+		<text>فشل تسجيل الدخول! اسم المستخدم أو كلمة المرور غير صحيحة.</text>
+	</loctext>
+	<loctext id="LOGIN_TITLE">
+		<text>تسجيل الدخول</text>
+	</loctext>
+	<loctext id="LOGIN_USERNAME">
+		<text>اسم المستخدم</text>
+	</loctext>
+	<loctext id="LOGIN_PASSWORD">
+		<text>كلمة المرور</text>
+	</loctext>
+	<loctext id="LOGIN_REGISTER">
+		<text>التسجيل</text>
+	</loctext>
+	<loctext id="LOGIN_SUBMIT">
+		<text>تسجيل الدخول</text>
+	</loctext>
+	<loctext id="REGISTER_TITLE">
+		<text>التسجيل</text>
+	</loctext>
+	<loctext id="REGISTER_USERNAME">
+		<text>اسم المستخدم</text>
+	</loctext>
+	<loctext id="REGISTER_PASSWORD">
+		<text>كلمة المرور</text>
+	</loctext>
+	<loctext id="REGISTER_SUBMIT">
+		<text>تسجيل الدخول</text>
+	</loctext>
+	<loctext id="REGISTER_ERROR">
+		<text>التسجيل معطوب. حاول مرة أخرى!</text>
+	</loctext>
+	<loctext id="REGISTER_TO_LOGIN">
+		<text>العودة إلى تسجيل</text>
+	</loctext>
+	<loctext id="SELECT_LANGUAGE">
+		<text>حدد اللغة</text>
+	</loctext>
+	<loctext id="CURRENT_LANGUAGE">
+		<text>اللغة الحالية</text>
+	</loctext>
+	<loctext id="GAME_TITLE">
+		<text>الذاكرة</text>
+	</loctext>
+	<loctext id="GAME_TIME_PAUSED">
+		<text>وقت توقف</text>
+	</loctext>
+	<loctext id="GAME_REPEAT_WORD">
+		<text>الرجاء تكرار:</text>
+	</loctext>
+	<loctext id="GAME_REPEAT_CLOSE">
+		<text>قم بإغلاق</text>
+	</loctext>
+	<loctext id="SOUND_MUTE">
+		<text>الصوت قبالة</text>
+	</loctext>
+	<loctext id="ELAPSED_TIME">
+		<text>الوقت المنقضي</text>
+	</loctext>
+	<loctext id="STATS_TITLE">
+		<text>هذه هي نتائج %s!</text>
+	</loctext>
+	<loctext id="STATS_FAST">
+		<text>الخاص بك نتيجة أسرع</text>
+	</loctext>
+	<loctext id="STATS_GAMECOUNT">
+		<text>عدد الألعاب</text>
+	</loctext>
+	<loctext id="STATS_DOWNLOAD">
+		<text>تنزيل قوات الدفاع الشعبي</text>
+	</loctext>
+	<loctext id="STATS_SUBTITLE">
+		<text>جهاز ألعاب</text>
+	</loctext>
+	<loctext id="STATS_TABLE_NUMBER">
+		<text>لا.</text>
+	</loctext>
+	<loctext id="STATS_TABLE_DATE">
+		<text>تاريخ</text>
+	</loctext>
+	<loctext id="STATS_TABLE_SCORE">
+		<text>الوقت</text>
+	</loctext>
+	<loctext id="STATS_TABLE_FLIPS">
+		<text>عدد محاولات</text>
+	</loctext>
+	<loctext id="GAME_OVER_SCORE">
+		<text>الوقت الخاص بك</text>
+	</loctext>
+	<loctext id="GAME_OVER_TEXT">
+		<text>تهانينا!</text>
+	</loctext>
+</language>
