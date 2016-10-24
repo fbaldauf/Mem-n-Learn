@@ -15,6 +15,42 @@
 	<loctext id="WELCOME">
 		<text>Herzlich Willkommen %s</text>
 	</loctext>
+		<loctext id="LOGIN_ERROR">
+		<text>Login fehlgeschlagen! Benutzername oder Passwort nicht korrekt.</text>
+	</loctext>
+	<loctext id="LOGIN_TITLE">
+		<text>Anmelden</text>
+	</loctext>
+	<loctext id="LOGIN_USERNAME">
+		<text>Benutzername</text>
+	</loctext>
+	<loctext id="LOGIN_PASSWORD">
+		<text>Passwort</text>
+	</loctext>
+	<loctext id="LOGIN_REGISTER">
+		<text>Registrierung</text>
+	</loctext>
+	<loctext id="LOGIN_SUBMIT">
+		<text>Anmelden</text>
+	</loctext>
+	<loctext id="REGISTER_TITLE">
+		<text>Registrierung</text>
+	</loctext>
+	<loctext id="REGISTER_USERNAME">
+		<text>Benutzername</text>
+	</loctext>
+	<loctext id="REGISTER_PASSWORD">
+		<text>Passwort</text>
+	</loctext>
+	<loctext id="REGISTER_SUBMIT">
+		<text>Anmelden</text>
+	</loctext>
+	<loctext id="REGISTER_ERROR">
+		<text>Registrierung fehlerhaft. Versuchen Sie es erneut! </text>
+	</loctext>
+	<loctext id="REGISTER_TO_LOGIN">
+		<text>Zurück zur Anmeldung</text>
+	</loctext>
 	<loctext id="SELECT_LANGUAGE">
 		<text>Sprache auswählen</text>
 	</loctext>
