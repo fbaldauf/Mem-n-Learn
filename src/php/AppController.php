@@ -74,7 +74,7 @@ class AppController {
 		$view = new View();
 		$view->setTemplate('dashboard');
 		$view->assign ( 'username', isset ( $_SESSION ['username'] ) ? $_SESSION ['username'] : '' );
-		$view->assign('devErrors', $this->checkLocale());
+		//$view->assign('devErrors', $this->checkLocale());
 		return $this->renderView($view);
 	}
 	
@@ -205,7 +205,7 @@ class AppController {
 		}
 		
 		// Sprache Userabhängig ist im Nachhinein hinzugekommen
-		$res = $this->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '$this->db' AND TABLE_NAME = 'user' AND COLUMN_NAME = 'language'");
+		$res = $this->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_NAME = 'user' AND COLUMN_NAME = 'language'");
 		if (null === $this->fetch_object($res)) {
 			// Spalte existiert noch nicht
 			if (!$this->query("ALTER TABLE user ADD language VARCHAR(50) DEFAULT 'english'")) {
@@ -215,7 +215,7 @@ class AppController {
 		}
 		
 		//Spalte flips ist im Nachhinein hinzugekommen
-		$res = $this->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '$this->db' AND TABLE_NAME = 'result' AND COLUMN_NAME = 'flips'");
+		$res = $this->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_NAME = 'result' AND COLUMN_NAME = 'flips'");
 		if (null === $this->fetch_object($res)) {
 			// Spalte existiert noch nicht
 			if (!$this->query("ALTER TABLE result ADD flips INT DEFAULT -1")) {
