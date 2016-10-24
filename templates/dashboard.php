@@ -1,10 +1,10 @@
 <?php
 $langs = [
-		'german' => 'Germany-01.png',
-		'english' => 'United Kingdom-01.png',
-		'french' => 'France-01.png',
-		'spanish' => 'Spain-01.png',
-		'pashto' => 'Pakistan-01.png'
+		'german' => 'germany.png',
+		'english' => 'uk.png',
+		'french' => 'france.png',
+		'spanish' => 'spain.png',
+		'arabic' => 'syria.png'
 ];
 ?>
 <div class="row">
