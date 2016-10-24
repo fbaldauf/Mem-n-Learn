@@ -10,7 +10,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href=".">Mem-n-Learn</a>
+				<a class="navbar-brand" href="index">Mem-n-Learn</a>
 			</div>
 
 
