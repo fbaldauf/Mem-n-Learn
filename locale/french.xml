@@ -3,6 +3,9 @@
 	<loctext id="MENU_NEW_GAME">
 		<text>Nouveau jeu</text>
 	</loctext>
+	<loctext id="GAME_FLIPS">
+		<text>Nombre de tentatives</text>
+	</loctext>
 	<loctext id="MENU_USER_STATS">
 		<text>Statistiques</text>
 	</loctext>
