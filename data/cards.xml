@@ -124,7 +124,7 @@
 
 		<translations>
 
-			<german>Fussball</german>
+			<german>Fußball</german>
 
 			<english>Football</english>
 			<french>Foot</french>
@@ -228,7 +228,7 @@
 
 		<translations>
 
-			<german>Loeffel</german>
+			<german>Löffel</german>
 
 			<english>Spoon</english>
 			<french>Cuiller</french>
@@ -549,7 +549,7 @@
 	<card>
 		<image>kuecken.png</image>
 		<translations>
-			<german>Kücken</german>
+			<german>Küken</german>
 		</translations>
 	</card>
 	<card>
