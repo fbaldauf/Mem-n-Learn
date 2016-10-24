@@ -111,4 +111,10 @@
 	<loctext id="GAME_OVER_TEXT">
 		<text>¡Felicidades!</text>
 	</loctext>
+	<loctext id="CHART_TITLE">
+		<text>Progreso en el aprendizaje</text>
+	</loctext>
+	<loctext id="CHART_UNIT">
+		<text>Minutos</text>
+	</loctext>
 </language>

@@ -15,27 +15,30 @@
 			<?php echo $this->_('STATS_SUBTITLE');?>
 		</h2>
 		<table class="table table-striped table-hover table-condensed">
+			<thead>
 			<tr>
 				<th><?php echo $this->_('STATS_TABLE_NUMBER');?></th>
 				<th><?php echo $this->_('STATS_TABLE_DATE');?></th>
 				<th><?php echo $this->_('STATS_TABLE_SCORE');?></th>
 				<th><?php echo $this->_('STATS_TABLE_FLIPS');?></th>
 			</tr>
+			</thead>
+			<tbody>
 
-<?php $anzahl = 1;foreach ( $this->_ ['data'] ['games'] as $row ): ?>
- 			<tr
-				class="
-				<?php echo ($row['time'] == $this->_['data']['fastest']) ? 'success' : ''; ?>">
-				<td><?php echo $anzahl ?></td>
-				<td><?php echo $row ['date'] ?></td>
-				<td><?php echo $row ['time'] ?></td>
-				<td><?php echo $row ['flips'] ?></td>
-			</tr>
-		 	<?php
-			$anzahl = $anzahl + 1;
-		endforeach
-		;
-		?>
+			<?php $anzahl = 1;foreach ( $this->_ ['data'] ['games'] as $row ): ?>
+	 			<tr
+					class="
+					<?php echo ($row['time'] == $this->_['data']['fastest']) ? 'success' : ''; ?>">
+					<td><?php echo $anzahl ?></td>
+					<td><?php echo $row ['date'] ?></td>
+					<td><?php echo $row ['time'] ?></td>
+					<td><?php echo $row ['flips'] ?></td>
+				</tr>
+			 	<?php
+				$anzahl = $anzahl + 1;
+				endforeach;
+			?>
+			</tbody>
 		</table>
 
 	</div>
@@ -44,10 +47,12 @@
 	<div class="col-lg-1"></div>
 </div>
 <script>
-initChart({
-	data: <?php echo json_encode($this->_['data']); ?>,
-	title: '<?php echo $this->_('CHART_TITLE'); ?>',
-	unit: '<?php echo $this->_('CHART_UNIT'); ?>',
-	user: '<?php echo ucfirst($this->_['username']); ?>'
+$(document).ready(function() {
+	initChart({
+		data: <?php echo json_encode($this->_['data']); ?>,
+		title: '<?php echo str_replace("'", "\'", $this->_('CHART_TITLE')); ?>',
+		unit: '<?php echo $this->_('CHART_UNIT'); ?>',
+		user: '<?php echo ucfirst($this->_['username']); ?>'
+	});
 });
 </script>

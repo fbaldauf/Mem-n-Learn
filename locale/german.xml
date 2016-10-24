@@ -111,4 +111,13 @@
 	<loctext id="GAME_OVER_TEXT">
 		<text>Herzlichen Glückwunsch!</text>
 	</loctext>
+	<loctext id="CHART_TITLE">
+		<text>Lernverlauf</text>
+	</loctext>
+	<loctext id="CHART_UNIT">
+		<text>Minuten</text>
+	</loctext>
+	<loctext id="GAME_OVER_TEXT">
+		<text>Herzlichen Glückwunsch!</text>
+	</loctext>
 </language>

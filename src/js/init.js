@@ -1,12 +1,15 @@
-var colors = [ '#f44336', '#e91e63', '#9c27b0', '#673ab7', '#2196f3',
-		'#4caf50', '#cddc39', '#ff9800', '#795548', '#9e9e9e' ];
-
+// Wird aufgerufen, sobald das HTML bereit ist
 $(document).ready(
 		function() {
+			// Menü initialisiert
 			menu.init({
-				items : $('.navbar').find('.navbar-brand').add(
-						$('.navbar').find('li')),
+				// Einzelne Menüpunkte
+				items : $('.navbar').find('.navbar-brand').add($('.navbar').find('li')),
+				
+				// Container, der den Inhalt beinhaltet
 				container : $('#content')
 			});
+
+			// Menü wird aktiv geschaltet, falls der Benutzer angemeldet ist
 			menu.setActive($(document).data('loggedIn'));
 		});

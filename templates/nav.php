@@ -25,7 +25,8 @@
 							aria-hidden="true"></span> <?php echo $this->_('MENU_USER_STATS');?></a></li>
 
 
-					<li><a href="logout"><?php echo $this->_('MENU_LOGOUT');?></a></li>
+					<li><a href="logout"><span class="glyphicon glyphicon-log-out"
+							aria-hidden="true"></span> <?php echo $this->_('MENU_LOGOUT');?></a></li>
 				</ul>
 			</div>
 

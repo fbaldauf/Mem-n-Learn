@@ -1,12 +1,46 @@
 <?php
-return array('index' => ['route' => '/', 'controller' => 'AppController', 'action' => 'index'],
-	'new-game' => ['route' => '/new-game', 'controller' => 'GameController', 'action' => 'startNew'],
-	'save-game' => ['route' => '/save-game', 'controller' => 'GameController', 'action' => 'save'],
-	'stats' => ['route' => '/statistic', 'controller' => 'UserController', 'action' => 'index'],
-	'logout' => ['route' => "/logout", 'controller' => 'UserController', 'action' => 'logout'],
-	'register' => ['route' => "/register", 'controller' => 'UserController', 'action' => 'register'],
-	'exportStatistics' => ['route' => "/exportStatistics", 'controller' => 'UserController', 'action' => 'exportStatistics'],
-	'language' => ['route' => "/(?'lang'[\w\-]+)", 'controller' => 'AppController', 'action' => 'setLanguage']);
+return array (
+		'index' => [ 
+				'route' => '/',
+				'controller' => 'AppController',
+				'action' => 'index' 
+		],
+		'new-game' => [ 
+				'route' => '/new-game',
+				'controller' => 'GameController',
+				'action' => 'startNew' 
+		],
+		'save-game' => [ 
+				'route' => '/save-game',
+				'controller' => 'GameController',
+				'action' => 'save' 
+		],
+		'stats' => [ 
+				'route' => '/statistic',
+				'controller' => 'UserController',
+				'action' => 'index' 
+		],
+		'logout' => [ 
+				'route' => "/logout",
+				'controller' => 'UserController',
+				'action' => 'logout' 
+		],
+		'register' => [ 
+				'route' => "/register",
+				'controller' => 'UserController',
+				'action' => 'register' 
+		],
+		'exportStatistics' => [ 
+				'route' => "/exportStatistics",
+				'controller' => 'UserController',
+				'action' => 'exportStatistics' 
+		],
+		'language' => [ 
+				'route' => "/(?'lang'[\w\-]+)",
+				'controller' => 'AppController',
+				'action' => 'setLanguage' 
+		] 
+);
 
 // Examples
 // 'picture' => "/picture/(?'text'[^/]+)/(?'id'\d+)", // '/picture/some-text/51'
