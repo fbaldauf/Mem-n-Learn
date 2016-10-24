@@ -101,10 +101,16 @@ var game = {
 		});
 
 	},
+	
+	addTurn: function() {
+		game.data.turn++;
+		$('.count-flips').html(game.data.turn);
+	},
+	
 	flipCard : function(event) {
 		var tile = $(event.currentTarget);
 		var data = tile.data('tile');
-		game.data.turn++;
+		game.addTurn();
 
 		var flip = tile.data("flip-model");
 
