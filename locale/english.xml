@@ -9,6 +9,9 @@
 	<loctext id="MENU_LOGOUT">
 		<text>Logout</text>
 	</loctext>
+	<loctext id="GAME_FLIPS">
+		<text>Number of attempts</text>
+	</loctext>
 	<loctext id="DASHBOARD_TITLE">
 		<text>Dashboard</text>
 	</loctext>
@@ -44,5 +47,68 @@
 	</loctext>
 	<loctext id="REGISTER_SUBMIT">
 		<text>Sign Up</text>
+	</loctext>
+	<loctext id="REGISTER_ERROR">
+		<text>Registration failed. Try Again!</text>
+	</loctext>
+	<loctext id="REGISTER_TO_LOGIN">
+		<text>Back to Sign In</text>
+	</loctext>
+	<loctext id="SELECT_LANGUAGE">
+		<text>Select language</text>
+	</loctext>
+	<loctext id="CURRENT_LANGUAGE">
+		<text>Your current language is</text>
+	</loctext>
+	<loctext id="GAME_TITLE">
+		<text>Memory</text>
+	</loctext>
+	<loctext id="GAME_TIME_PAUSED">
+		<text>Time stopped</text>
+	</loctext>
+	<loctext id="GAME_REPEAT_WORD">
+		<text>Please repeat:</text>
+	</loctext>
+	<loctext id="GAME_REPEAT_CLOSE">
+		<text>Close</text>
+	</loctext>
+	<loctext id="SOUND_MUTE">
+		<text>Mute</text>
+	</loctext>
+	<loctext id="ELAPSED_TIME">
+		<text>Elapsed time</text>
+	</loctext>
+	<loctext id="STATS_TITLE">
+		<text>These are the results of %s!</text>
+	</loctext>
+	<loctext id="STATS_FAST">
+		<text>Your fastest result</text>
+	</loctext>
+	<loctext id="STATS_GAMECOUNT">
+		<text>Number games</text>
+	</loctext>
+	<loctext id="STATS_DOWNLOAD">
+		<text>PDF download</text>
+	</loctext>
+	<loctext id="STATS_SUBTITLE">
+		<text>Your games</text>
+	</loctext>
+	<loctext id="STATS_TABLE_NUMBER">
+		<text>No.</text>
+	</loctext>
+	<loctext id="STATS_TABLE_DATE">
+		<text>Datum</text>
+	</loctext>
+	<loctext id="STATS_TABLE_SCORE">
+		<text>Time</text>
+	</loctext>
+	<loctext id="STATS_TABLE_FLIPS">
+		<text>Number of attempts</text>
+	</loctext>
+	<loctext id="GAME_OVER_SCORE">
+		<text>Your time</text>
+	</loctext>
+	<loctext id="GAME_OVER_TEXT">
+		<text>Congratulations!</text>
 	</loctext>
 </language>

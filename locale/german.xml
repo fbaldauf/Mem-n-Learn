@@ -15,6 +15,42 @@
 	<loctext id="WELCOME">
 		<text>Herzlich Willkommen %s</text>
 	</loctext>
+		<loctext id="LOGIN_ERROR">
+		<text>Login fehlgeschlagen! Benutzername oder Passwort nicht korrekt.</text>
+	</loctext>
+	<loctext id="LOGIN_TITLE">
+		<text>Anmelden</text>
+	</loctext>
+	<loctext id="LOGIN_USERNAME">
+		<text>Benutzername</text>
+	</loctext>
+	<loctext id="LOGIN_PASSWORD">
+		<text>Passwort</text>
+	</loctext>
+	<loctext id="LOGIN_REGISTER">
+		<text>Registrierung</text>
+	</loctext>
+	<loctext id="LOGIN_SUBMIT">
+		<text>Anmelden</text>
+	</loctext>
+	<loctext id="REGISTER_TITLE">
+		<text>Registrierung</text>
+	</loctext>
+	<loctext id="REGISTER_USERNAME">
+		<text>Benutzername</text>
+	</loctext>
+	<loctext id="REGISTER_PASSWORD">
+		<text>Passwort</text>
+	</loctext>
+	<loctext id="REGISTER_SUBMIT">
+		<text>Anmelden</text>
+	</loctext>
+	<loctext id="REGISTER_ERROR">
+		<text>Registrierung fehlerhaft. Versuchen Sie es erneut! </text>
+	</loctext>
+	<loctext id="REGISTER_TO_LOGIN">
+		<text>Zurück zur Anmeldung</text>
+	</loctext>
 	<loctext id="SELECT_LANGUAGE">
 		<text>Sprache auswählen</text>
 	</loctext>
@@ -23,6 +59,18 @@
 	</loctext>
 	<loctext id="GAME_TITLE">
 		<text>Memory</text>
+	</loctext>
+	<loctext id="GAME_TIME_PAUSED">
+		<text>Zeit gestoppt</text>
+	</loctext>
+	<loctext id="GAME_REPEAT_WORD">
+		<text>Bitte wiederhole:</text>
+	</loctext>
+	<loctext id="GAME_FLIPS">
+		<text>Anzahl Versuche</text>
+	</loctext>
+	<loctext id="GAME_REPEAT_CLOSE">
+		<text>Schließen</text>
 	</loctext>
 	<loctext id="SOUND_MUTE">
 		<text>Stummschalten</text>
@@ -53,5 +101,14 @@
 	</loctext>
 	<loctext id="STATS_TABLE_SCORE">
 		<text>Zeit</text>
+	</loctext>
+	<loctext id="STATS_TABLE_FLIPS">
+		<text>Anzahl der Versuche</text>
+	</loctext>
+	<loctext id="GAME_OVER_SCORE">
+		<text>Deine benötigte Zeit</text>
+	</loctext>
+	<loctext id="GAME_OVER_TEXT">
+		<text>Herzlichen Glückwunsch!</text>
 	</loctext>
 </language>

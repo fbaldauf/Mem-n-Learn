@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="GERMAN">
+	<loctext id="MENU_NEW_GAME">
+		<text>Neues Spiel</text>
+	</loctext>
+	<loctext id="MENU_USER_STATS">
+		<text>Statistiken</text>
+	</loctext>
+	<loctext id="MENU_LOGOUT">
+		<text>Logout</text>
+	</loctext>
+	<loctext id="DASHBOARD_TITLE">
+		<text>Dashboard</text>
+	</loctext>
+	<loctext id="WELCOME">
+		<text>Herzlich Willkommen %s</text>
+	</loctext>
+		<loctext id="LOGIN_ERROR">
+		<text>Login fehlgeschlagen! Benutzername oder Passwort nicht korrekt.</text>
+	</loctext>
+	<loctext id="LOGIN_TITLE">
+		<text>Anmelden</text>
+	</loctext>
+	<loctext id="LOGIN_USERNAME">
+		<text>Benutzername</text>
+	</loctext>
+	<loctext id="LOGIN_PASSWORD">
+		<text>Passwort</text>
+	</loctext>
+	<loctext id="LOGIN_REGISTER">
+		<text>Registrierung</text>
+	</loctext>
+	<loctext id="LOGIN_SUBMIT">
+		<text>Anmelden</text>
+	</loctext>
+	<loctext id="REGISTER_TITLE">
+		<text>Registrierung</text>
+	</loctext>
+	<loctext id="REGISTER_USERNAME">
+		<text>Benutzername</text>
+	</loctext>
+	<loctext id="REGISTER_PASSWORD">
+		<text>Passwort</text>
+	</loctext>
+	<loctext id="REGISTER_SUBMIT">
+		<text>Anmelden</text>
+	</loctext>
+	<loctext id="REGISTER_ERROR">
+		<text>Registrierung fehlerhaft. Versuchen Sie es erneut! </text>
+	</loctext>
+	<loctext id="REGISTER_TO_LOGIN">
+		<text>Zurück zur Anmeldung</text>
+	</loctext>
+	<loctext id="SELECT_LANGUAGE">
+		<text>Sprache auswählen</text>
+	</loctext>
+	<loctext id="CURRENT_LANGUAGE">
+		<text>Ihre aktuelle Sprache ist</text>
+	</loctext>
+	<loctext id="GAME_TITLE">
+		<text>Memory</text>
+	</loctext>
+	<loctext id="GAME_TIME_PAUSED">
+		<text>Zeit gestoppt</text>
+	</loctext>
+	<loctext id="GAME_REPEAT_WORD">
+		<text>Bitte wiederhole:</text>
+	</loctext>
+	<loctext id="GAME_REPEAT_CLOSE">
+		<text>Schließen</text>
+	</loctext>
+	<loctext id="SOUND_MUTE">
+		<text>Stummschalten</text>
+	</loctext>
+	<loctext id="ELAPSED_TIME">
+		<text>Abgelaufene Zeit</text>
+	</loctext>
+	<loctext id="STATS_TITLE">
+		<text>Dies sind die Ergebnisse von %s!</text>
+	</loctext>
+	<loctext id="STATS_FAST">
+		<text>Dein schnellstes Ergebnis</text>
+	</loctext>
+	<loctext id="STATS_GAMECOUNT">
+		<text>Anzahl Spiele</text>
+	</loctext>
+	<loctext id="STATS_DOWNLOAD">
+		<text>PDF herunterladen</text>
+	</loctext>
+	<loctext id="STATS_SUBTITLE">
+		<text>Deine Spiele</text>
+	</loctext>
+	<loctext id="STATS_TABLE_NUMBER">
+		<text>Nr.</text>
+	</loctext>
+	<loctext id="STATS_TABLE_DATE">
+		<text>Datum</text>
+	</loctext>
+	<loctext id="STATS_TABLE_SCORE">
+		<text>Zeit</text>
+	</loctext>
+	<loctext id="STATS_TABLE_FLIPS">
+		<text>Anzahl der Versuche</text>
+	</loctext>
+	<loctext id="GAME_OVER_SCORE">
+		<text>Deine benötigte Zeit</text>
+	</loctext>
+	<loctext id="GAME_OVER_TEXT">
+		<text>Herzlichen Glückwunsch!</text>
+	</loctext>
+</language>

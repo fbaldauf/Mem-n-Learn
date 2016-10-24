@@ -124,7 +124,7 @@
 
 		<translations>
 
-			<german>Fussball</german>
+			<german>Fußball</german>
 
 			<english>Football</english>
 			<french>Foot</french>
@@ -228,7 +228,7 @@
 
 		<translations>
 
-			<german>Loeffel</german>
+			<german>Löffel</german>
 
 			<english>Spoon</english>
 			<french>Cuiller</french>
@@ -454,7 +454,7 @@
 
 			<german>Uhr</german>
 
-			<english>Watch</english>
+			<english>Clock</english>
 			<french>Montre</french>
 			<pashto>ساعت</pashto>
 
@@ -477,19 +477,181 @@
 
 	</card>
 	<card>
-
 		<image>zeitung.png</image>
-
 		<translations>
-
 			<german>Zeitung</german>
-
 			<english>Newspaper</english>
 			<french>Journal</french>
 			<pashto>ورځپاڼې</pashto>
-
 		</translations>
-
 	</card>
 
+	<card>
+		<image>apfel.png</image>
+		<translations>
+			<german>Apfel</german>
+		</translations>
+	</card>
+	<card>
+		<image>banane.png</image>
+		<translations>
+			<german>Banane</german>
+		</translations>
+	</card>
+	<card>
+		<image>bett.png</image>
+		<translations>
+			<german>Bett</german>
+		</translations>
+	</card>
+	<card>
+		<image>erdbeere.png</image>
+		<translations>
+			<german>Erdbeere</german>
+		</translations>
+	</card>
+	<card>
+		<image>gurke.png</image>
+		<translations>
+			<german>Gurke</german>
+		</translations>
+	</card>
+	<card>
+		<image>herz.png</image>
+		<translations>
+			<german>Herz</german>
+		</translations>
+	</card>
+	<card>
+		<image>hose.png</image>
+		<translations>
+			<german>Hose</german>
+		</translations>
+	</card>
+	<card>
+		<image>huhn.png</image>
+		<translations>
+			<german>Huhn</german>
+		</translations>
+	</card>
+	<card>
+		<image>kerze.png</image>
+		<translations>
+			<german>Kerze</german>
+		</translations>
+	</card>
+	<card>
+		<image>kirsche.png</image>
+		<translations>
+			<german>Kirsche</german>
+		</translations>
+	</card>
+	<card>
+		<image>kuecken.png</image>
+		<translations>
+			<german>Küken</german>
+		</translations>
+	</card>
+	<card>
+		<image>kuh.png</image>
+		<translations>
+			<german>Kuh</german>
+		</translations>
+	</card>
+	<card>
+		<image>lampe.png</image>
+		<translations>
+			<german>Lampe</german>
+		</translations>
+	</card>
+	<card>
+		<image>mond.png</image>
+		<translations>
+			<german>Mond</german>
+		</translations>
+	</card>
+	<card>
+		<image>paprika.png</image>
+		<translations>
+			<german>Paprika</german>
+		</translations>
+	</card>
+	<card>
+		<image>pferd.png</image>
+		<translations>
+			<german>Pferd</german>
+		</translations>
+	</card>
+	<card>
+		<image>regal.png</image>
+		<translations>
+			<german>Regal</german>
+		</translations>
+	</card>
+	<card>
+		<image>schrank.png</image>
+		<translations>
+			<german>Schrank</german>
+		</translations>
+	</card>
+	<card>
+		<image>schwein.png</image>
+		<translations>
+			<german>Schwein</german>
+		</translations>
+	</card>
+	<card>
+		<image>skateboard.png</image>
+		<translations>
+			<german>Skateboard</german>
+		</translations>
+	</card>
+	<card>
+		<image>sofa.png</image>
+		<translations>
+			<german>Sofa</german>
+		</translations>
+	</card>
+	<card>
+		<image>sonne.png</image>
+		<translations>
+			<german>Sonne</german>
+		</translations>
+	</card>
+	<card>
+		<image>stern.png</image>
+		<translations>
+			<german>Stern</german>
+		</translations>
+	</card>
+	<card>
+		<image>tomate.png</image>
+		<translations>
+			<german>Tomate</german>
+		</translations>
+	</card>
+	<card>
+		<image>wuerfel.png</image>
+		<translations>
+			<german>Würfel</german>
+		</translations>
+	</card>
+	<card>
+		<image>zaun.png</image>
+		<translations>
+			<german>Zaun</german>
+		</translations>
+	</card>
+	<card>
+		<image>zug.png</image>
+		<translations>
+			<german>Zug</german>
+		</translations>
+	</card>
+	<card>
+		<image>armbanduhr.png</image>
+		<translations>
+			<german>Armbanduhr</german>
+		</translations>
+	</card>
 </cards>

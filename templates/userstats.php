@@ -10,7 +10,7 @@
 </div>
 <div class="row" style="margin-top: 1vw">
 	<div class="col-lg-1"></div>
-	<div class="table-responsive col-lg-10">
+	<div class="table-responsive col-lg-5 col-md-10">
 		<h2>
 			<?php echo $this->_('STATS_SUBTITLE');?>
 		</h2>
@@ -19,6 +19,7 @@
 				<th><?php echo $this->_('STATS_TABLE_NUMBER');?></th>
 				<th><?php echo $this->_('STATS_TABLE_DATE');?></th>
 				<th><?php echo $this->_('STATS_TABLE_SCORE');?></th>
+				<th><?php echo $this->_('STATS_TABLE_FLIPS');?></th>
 			</tr>
 
 <?php $anzahl = 1;foreach ( $this->_ ['data'] ['games'] as $row ): ?>
@@ -28,23 +29,25 @@
 				<td><?php echo $anzahl ?></td>
 				<td><?php echo $row ['date'] ?></td>
 				<td><?php echo $row ['time'] ?></td>
+				<td><?php echo $row ['flips'] ?></td>
 			</tr>
- 	<?php
-	$anzahl = $anzahl + 1;
-endforeach
-;
-?>
-</table>
+		 	<?php
+			$anzahl = $anzahl + 1;
+		endforeach
+		;
+		?>
+		</table>
 
 	</div>
-	<div class="col-lg-1"></div>
-</div>
-<div class="row">
-	<div class="col-lg-1"></div>
-	<div id="container" class="col-lg-10"
+	<div id="container" class="col-lg-5 col-md-10"
 		style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 	<div class="col-lg-1"></div>
 </div>
 <script>
-initChart({data: <?php echo json_encode($this->_['data']); ?>});
+initChart({
+	data: <?php echo json_encode($this->_['data']); ?>,
+	title: '<?php echo $this->_('CHART_TITLE'); ?>',
+	unit: '<?php echo $this->_('CHART_UNIT'); ?>',
+	user: '<?php echo ucfirst($this->_['username']); ?>'
+});
 </script>

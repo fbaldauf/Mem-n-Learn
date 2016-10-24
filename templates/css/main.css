@@ -70,3 +70,10 @@
 .back.match {
 	background-color: #4caf50;
 }
+.modal-body img {
+	width: 70%;
+	margin: 0 15%;
+}
+.modal-body .text {
+	font-size: 4vw;
+}

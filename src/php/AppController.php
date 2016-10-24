@@ -199,9 +199,28 @@ class AppController {
 				// Die Tabelle existiert noch nicht -> anlegen
 				if (!$this->query($sql)) {
 					// Die Tabelle konnte nicht angelegt werden
-					echo $sql;
 					return false;
 				}
+			}
+		}
+		
+		// Sprache Userabhängig ist im Nachhinein hinzugekommen
+		$res = $this->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_NAME = 'user' AND COLUMN_NAME = 'language'");
+		if (null === $this->fetch_object($res)) {
+			// Spalte existiert noch nicht
+			if (!$this->query("ALTER TABLE user ADD language VARCHAR(50) DEFAULT 'english'")) {
+				// Die Tabelle konnte nicht geändert werden
+				return false;
+			}
+		}
+		
+		//Spalte flips ist im Nachhinein hinzugekommen
+		$res = $this->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_NAME = 'result' AND COLUMN_NAME = 'flips'");
+		if (null === $this->fetch_object($res)) {
+			// Spalte existiert noch nicht
+			if (!$this->query("ALTER TABLE result ADD flips INT DEFAULT -1")) {
+				// Die Tabelle konnte nicht geändert werden
+				return false;
 			}
 		}
 		return true;
@@ -360,7 +379,13 @@ class AppController {
 			$lang = substr($lang, 5);
 		}
 
-		$_SESSION['config']->setLanguage($lang);
+		/** @var  Configuration $conf */
+		$conf = $_SESSION['config']; 
+		$conf->setLanguage($lang);
+		
+		$sql = "UPDATE user SET language = '". $conf->getLanguage() . "' WHERE LOWER(name) = LOWER('".$_SESSION['username']."')";
+		$this->query($sql);
+		
 		return $this->index();
 	}
 }

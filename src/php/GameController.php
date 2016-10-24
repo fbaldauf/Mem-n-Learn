@@ -37,7 +37,7 @@ class GameController extends AppController {
 		$this->view->setTemplate('game');
 		$this->view->assign('cards', $this->getCards());
 
-		// Die View für den Container einer KArte festlegen
+		// Die View für den Container einer Karte festlegen
 		$cardContainer = new View('cardContainer');
 
 		// Die Rückgabe ist eine JavaScriptResponse im JSON-Format, die von Javascript ausgelesen werden kann.
@@ -51,7 +51,7 @@ class GameController extends AppController {
 
 			'defaultCard' => $this->defaultCard, // Name der Grafik, die für die Kartenrückseite genutzt werden soll
 
-			'language' => $_SESSION['config']->getLanguage()]); // Sprache, die für das Spiel genutzt werden soll
+			'language' => 'german']);//$_SESSION['config']->getLanguage()]); // Sprache, die für das Spiel genutzt werden soll
 
 		return $res;
 	}
@@ -62,8 +62,8 @@ class GameController extends AppController {
 	 */
 	public function save() {
 		$response = new JavaScriptResponse();
-		$sql = 'INSERT INTO result (`F_userID`, `date`, `totaltime`) ';
-		$sql .= 'VALUES (' . $_SESSION['ID'] . ', \'' . date('Y-m-d', time()) . '\', SEC_TO_TIME(' . $this->request['time'] . '))';
+		$sql = 'INSERT INTO result (`F_userID`, `date`, `totaltime`, `flips`) ';
+		$sql .= 'VALUES (' . $_SESSION['ID'] . ', \'' . date('Y-m-d', time()) . '\', SEC_TO_TIME(' . $this->request['time'] . '), '. $this->request['flips'] .')';
 		$response->setContent(($this->query($sql)) ? true : [false, $this->dbError()]);
 
 		return $response;
@@ -99,7 +99,7 @@ class GameController extends AppController {
 			/** @var Configuration $conf */
 			$conf = $_SESSION['config'];
 
-			$translation = '' . $card->translations->{$conf->getLanguage()};
+			$translation = '' . $card->translations->german;//{$conf->getLanguage()};
 			$image = 'templates/img/cards/' . $card->image;
 			if ($german !== '' and $translation !== '' and $image !== '' and file_exists($image)) {
 				$cards[] = new Card($german, $translation, $image);
