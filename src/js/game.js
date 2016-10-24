@@ -33,7 +33,6 @@ var game = {
 
 		game.addCards();
 		game.preloadImages();
-		// console.log(game.data.nav.mute);
 		// game.data.nav.mute.flip();
 
 		game.startTimer();
@@ -62,7 +61,6 @@ var game = {
 		}, 1000);
 	},
 	pauseTimer : function() {
-		console.log("pausieren");
 		if (game.data.timer != null) {
 			clearInterval(game.data.timer);
 		}
@@ -213,7 +211,6 @@ var game = {
 			},
 			success : function(response) {
 				var data = $.parseJSON(response);
-				console.log(data);
 			},
 			error : function() {
 				$('#ajax-panel').empty();

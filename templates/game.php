@@ -8,7 +8,7 @@
 <div class="row">
 	<div class="col-lg-1"></div>
 	<div class="col-lg-10">
-		<button><?php echo $this->_('SOUND_MUTE');?></button>
+		<!-- <button><?php echo $this->_('SOUND_MUTE');?></button>-->
 		<span><?php echo $this->_('ELAPSED_TIME');?>: <span class="expired-time">00:00:00</span></span>
 	</div>
 </div>
