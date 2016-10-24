@@ -129,7 +129,7 @@ class UserController extends AppController {
 		$check = false;
 		$this->view = new View();
 
-		// Prüfe ob Login erfolgreich
+		// Prüfe ob Registrierung erfolgreich
 		if (isset($this->request['user']) and isset($this->request['password'])) {
 			$check = $this->checkRegister($this->request['user'], $this->request['password']);
 			if (!$check) {
@@ -143,6 +143,8 @@ class UserController extends AppController {
 			$this->view->setTemplate('register');
 			return $this->renderView();
 		}
+		
+		// Bei erfolgreicher Registierung den Benutzer einloggen
 		return $this->login();
 	}
 
@@ -168,7 +170,7 @@ class UserController extends AppController {
 	 */
 	protected function checkLogin($user, $password) {
 		$_SESSION ['eingeloggt'] = false;
-		// TODO: Folgende Zeile entfernen
+		
 		// Da Passwörter zunächst im Klaartext gespeichert wurden, muss zunächst das Passwort als Hash gespeichert werden
 		$this->query ( 'UPDATE user SET password=\'' . $this->getHashForPassword ( $password ) . '\' WHERE password=\'' . $password . '\' AND LOWER(name)=LOWER(\'' . $user . '\')' );
 		
@@ -217,11 +219,12 @@ class UserController extends AppController {
 	 * @return resource
 	 */
 	protected function checkRegister($user, $password) {
+		// Leerzeichen vorne und hinten abtrennen
 		$user = trim ( ( string ) $user );
 		$password = trim ( ( string ) $password );
 		
 		// Benutzername darf nicht leer sein
-		if (strlen ( $user ) === 0) {
+		if (strlen ( $user ) == 0) {
 			return false;
 		}
 		
@@ -283,8 +286,8 @@ class UserController extends AppController {
 		$stats = $this->getStatistics ();
 		$xml = $this->parseStatisticsToXML ( $stats );
 		
-		$xsl = new DOMDocument ();
-		$xsl->load ( 'data/results.xsl' );
+		//$xsl = new DOMDocument ();
+		//$xsl->load ( 'data/results.xsl' );
 		
 		// // Prozessor instanziieren und konfigurieren (für XSL, momentan nicht genutzt)
 		// $proc = new XSLTProcessor();

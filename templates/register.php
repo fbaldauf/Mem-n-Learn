@@ -12,7 +12,7 @@
 				    <?php } ?>
 				
 					<form action="register" method="POST">
-				
+					<!--  http://localhost/Mem-n-Learn/register -->
 						<div class="form-group">
 							<label for="txtUser"><?php echo $this->_('REGISTER_USERNAME') ?>:</label> <input type="text"
 								class="form-control" id="txtUser" name="user">
@@ -30,39 +30,3 @@
 		</div>
 	</div>
 </div>
-<!-- 
-                <table>
-
-                    <tr>
-                        <td>
-                            Username: 
-                        </td>
-                        <td>
-                            <input type="text" name="user" value="" size="30" />
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            Passwort:
-                        </td>
-                        <td>
-                            <input type="password" name="password" value="" size="30" />
-                        </td>
-                    </tr> 
-
-                    <tr>
-                        <td>
-
-                        </td>
-                        <td>
-                            <input type="submit" value="Create" name="createuser" />
-                            <input type="reset" value="Reset" name="reset" />
-                        </td>
-
-                    </tr>
-
-                </table>
-            </form>     
-        </div>
- -->

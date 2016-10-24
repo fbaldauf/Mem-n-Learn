@@ -29,17 +29,23 @@ var game = {
 		game.data.completed = [];
 		game.data.turn = 0;
 		game.components.winTimer = [];
+		game.components.modal = null;
 
+		// Karten dem Spielfeld hinzufügen
 		game.addCards();
+		// Bilder in den Browserchache laden
 		game.preloadImages();
-		// game.data.nav.mute.flip();
 		
 		game.pauseTimer();
 		game.initSecondPlayer();
-		game.components.modal = null;
+		
 		$(game).on('exit', game.removeWinTimers);
 	},
 	
+	/**
+	 * Gibt das modale Fenster zurück
+	 * Wird genutzt für das "Wiederholen" und die Anzeige des Ergebnisses
+	 */
 	getDialog : function() {
 		if (game.components.modal == null) {
 			game.components.modal = $('#myModal').modal({});
@@ -53,6 +59,9 @@ var game = {
 		return game.components.modal;
 	},
 	
+	/**
+	 * Zeigt den modalen Dialog
+	 */
 	showDialog: function (mode, pdata) {
 		var modal = game.getDialog();
 		data = {img:'',word:'',score:''};
@@ -97,11 +106,17 @@ var game = {
 		game.data.elapsedTime++;
 		$('.expired-time').html(game.getFormattedTimeString());
 	},
+	/**
+	 * Gibt die vergangende Zeit im Format 00:00:00 zurück
+	 */
 	getFormattedTimeString: function() {
 		var t = new Date(2016, 1, 1, 0, 0, game.data.elapsedTime, 0);
 		return t.toLocaleTimeString();
 	},
 
+	/**
+	 * Fügt die Karten zum Spielfeld zurück
+	 */
 	addCards : function() {
 		var list = [];
 
@@ -139,11 +154,13 @@ var game = {
 	},
 	
 	flipCard : function(event) {
+		// Aktuell geklicktes Objekt
 		var tile = $(event.currentTarget);
 		var data = tile.data('tile');
 		var flip = tile.data("flip-model");
 		
 		if (!flip.isFlipped) {
+			// Nur wenn die Karte noch nicht umgedreht ist, die Anzahl der Flips erhöhen
 			game.addTurn();
 		}
 		
@@ -153,6 +170,7 @@ var game = {
 		}
 
 		if (!flip.isFlipped && game.data.openCards.length < 2) {
+			// Karte wird umgedreht
 			if (data.type === TILETYPE.IMAGE) {
 				tile.find('.card-front-text').css('display', 'none');
 				tile.find('.card-front-img').css('display', 'block').attr(
@@ -170,13 +188,14 @@ var game = {
 			if (game.data.openCards.length > 1) {
 				if (game.data.openCards[0].data('tile').card.id === data.card.id) {
 
+					// Pärchen gefunden! 
 					game.pauseTimer();
 					
 					var img = new Image();
 					img.src = data.card.image;
 					game.showDialog('repeat', {img: img, word: data.card.word});
 										
-					var a = 'b';
+					// Wenn die Animation fertig ist, dann die Kacheln grün färben
 					tile.on('flip:done', {
 						obj : game.data.openCards[0]
 					}, function(event) {
@@ -188,6 +207,7 @@ var game = {
 				} else {
 					setTimeout(function() {
 						$.each(game.data.openCards, function(key, value) {
+							// Alle offenen Karten wieder umdrehen
 							value.flip(false);
 							game.data.openCards = [];
 						});
@@ -262,6 +282,9 @@ var game = {
 		});
 	},
 
+	/**
+	 * Setzt eine Karte als korrekt
+	 */
 	setItemCompleted : function(tile) {
 		tile.data('flip-model').backElement.addClass('match', 1000);
 		if ($.inArray(tile, game.data.completed) < 0) {
@@ -289,12 +312,15 @@ var game = {
 	exitGame: function() {
 		$(game).trigger('exit');
 	},
+	/**
+	 * Beendet die Siegesanimation
+	 */
 	removeWinTimers: function() {
 		$.each(game.components.winTimer, function(key, value) {
 			clearInterval(value);
 		}) ;
 	}
-};
+}; // end game
 
 function Tile(card, type) {
 	this.card = card;

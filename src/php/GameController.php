@@ -35,6 +35,7 @@ class GameController extends AppController {
 		// Die View für das Spiel festlegen
 		$this->view = new View();
 		$this->view->setTemplate('game');
+		//TODO: nötig?
 		$this->view->assign('cards', $this->getCards());
 
 		// Die View für den Container einer Karte festlegen
@@ -51,7 +52,7 @@ class GameController extends AppController {
 
 			'defaultCard' => $this->defaultCard, // Name der Grafik, die für die Kartenrückseite genutzt werden soll
 
-			'language' => 'german']);//$_SESSION['config']->getLanguage()]); // Sprache, die für das Spiel genutzt werden soll
+			'language' => 'german']); // Sprache, die für das Spiel genutzt werden soll
 
 		return $res;
 	}
@@ -86,8 +87,8 @@ class GameController extends AppController {
 	 * @return Card[]
 	 */
 	private function loadCardsFromXML($c) {
-		$found = 0;
 		$cards = [];
+		
 		if (!file_exists($this->cardFiles)) {
 			// XML-Datei nicht gefunden -> Leere Liste zurückgeben
 			return [];
@@ -96,14 +97,11 @@ class GameController extends AppController {
 
 		foreach ($xml->children() as $card) {
 			$german = '' . $card->translations->german;
-			/** @var Configuration $conf */
-			$conf = $_SESSION['config'];
-
-			$translation = '' . $card->translations->german;//{$conf->getLanguage()};
+			$translation = '' . $card->translations->german;
 			$image = 'templates/img/cards/' . $card->image;
+			
 			if ($german !== '' and $translation !== '' and $image !== '' and file_exists($image)) {
 				$cards[] = new Card($german, $translation, $image);
-				$found++;
 			}
 		}
 		shuffle($cards);

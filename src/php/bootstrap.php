@@ -56,7 +56,6 @@ foreach ($rules as $action => $rule) {
 		$action = $rule['action'];
 
 		// Angeforderte Aktion ausführen
-		//var_dump($fc->getTemplate());
 		echo call_user_func_array(array($fc, $action), $params);
 		die();
 	}
