@@ -1,115 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language id="FRENCH">
-        
+<language id="ARABIC">
 	<loctext id="MENU_NEW_GAME">
-		<text>Nouveau jeu</text>
-	</loctext>
-	<loctext id="GAME_FLIPS">
-		<text>Nombre de tentatives</text>
+		<text>لعبة جديدة</text>
 	</loctext>
 	<loctext id="MENU_USER_STATS">
-		<text>Statistiques</text>
+		<text>إحصائيات</text>
 	</loctext>
 	<loctext id="MENU_LOGOUT">
-		<text>Logout</text>
+		<text>تسجيل الخروج</text>
 	</loctext>
 	<loctext id="DASHBOARD_TITLE">
-		<text>Dashboard</text>
+		<text>المعلومات</text>
 	</loctext>
 	<loctext id="WELCOME">
-		<text>Bienvenue %s</text>
+		<text>مرحبا بكم في %s</text>
 	</loctext>
-        <loctext id="LOGIN_ERROR">
-		<text>Échec de la connexion! Nom d'utilisateur ou mot de passe incorrect.</text>
+		<loctext id="LOGIN_ERROR">
+		<text>فشل تسجيل الدخول! اسم المستخدم أو كلمة المرور غير صحيحة.</text>
 	</loctext>
 	<loctext id="LOGIN_TITLE">
-		<text>Se connecter</text>
+		<text>تسجيل الدخول</text>
 	</loctext>
 	<loctext id="LOGIN_USERNAME">
-		<text>Nom de l'utilisateur</text>
+		<text>اسم المستخدم</text>
 	</loctext>
 	<loctext id="LOGIN_PASSWORD">
-		<text>Mot de passe</text>
+		<text>كلمة المرور</text>
 	</loctext>
 	<loctext id="LOGIN_REGISTER">
-		<text>S'inscrire</text>
+		<text>التسجيل</text>
 	</loctext>
 	<loctext id="LOGIN_SUBMIT">
-		<text>Se connecter</text>
+		<text>تسجيل الدخول</text>
 	</loctext>
 	<loctext id="REGISTER_TITLE">
-		<text>S'inscrire</text>
+		<text>التسجيل</text>
 	</loctext>
 	<loctext id="REGISTER_USERNAME">
-		<text>Nom de l'utilisateur</text>
+		<text>اسم المستخدم</text>
 	</loctext>
 	<loctext id="REGISTER_PASSWORD">
-		<text>Mot de passe</text>
+		<text>كلمة المرور</text>
 	</loctext>
 	<loctext id="REGISTER_SUBMIT">
-		<text>S'inscrire</text>
+		<text>تسجيل الدخول</text>
 	</loctext>
 	<loctext id="REGISTER_ERROR">
-		<text>Échec de l'enregistrement. Réessayer!</text>
+		<text>التسجيل معطوب. حاول مرة أخرى!</text>
 	</loctext>
 	<loctext id="REGISTER_TO_LOGIN">
-		<text>Retour à Connexion</text>
+		<text>العودة إلى تسجيل</text>
 	</loctext>
 	<loctext id="SELECT_LANGUAGE">
-		<text>Choisissez la langue</text>
+		<text>حدد اللغة</text>
 	</loctext>
 	<loctext id="CURRENT_LANGUAGE">
-		<text>Votre langue actuelle est</text>
+		<text>اللغة الحالية</text>
 	</loctext>
 	<loctext id="GAME_TITLE">
-		<text>Memory</text>
+		<text>الذاكرة</text>
 	</loctext>
 	<loctext id="GAME_TIME_PAUSED">
-		<text>Temps d'arrêt</text>
+		<text>وقت توقف</text>
 	</loctext>
 	<loctext id="GAME_REPEAT_WORD">
-		<text>S'il vous plaît répéter:</text>
+		<text>الرجاء تكرار:</text>
 	</loctext>
 	<loctext id="GAME_REPEAT_CLOSE">
-		<text>Fermer</text>
+		<text>قم بإغلاق</text>
 	</loctext>
 	<loctext id="SOUND_MUTE">
-		<text>Mute</text>
+		<text>الصوت قبالة</text>
 	</loctext>
 	<loctext id="ELAPSED_TIME">
-		<text>Le temps écoulé</text>
+		<text>الوقت المنقضي</text>
 	</loctext>
 	<loctext id="STATS_TITLE">
-		<text>Ce sont les résultats d' %s!</text>
+		<text>هذه هي نتائج %s!</text>
 	</loctext>
 	<loctext id="STATS_FAST">
-		<text>Votre résultat le plus rapide</text>
+		<text>الخاص بك نتيجة أسرع</text>
 	</loctext>
 	<loctext id="STATS_GAMECOUNT">
-		<text>Jeux numériques</text>
+		<text>عدد الألعاب</text>
 	</loctext>
 	<loctext id="STATS_DOWNLOAD">
-		<text>Télécharger PDF</text>
+		<text>تنزيل قوات الدفاع الشعبي</text>
 	</loctext>
 	<loctext id="STATS_SUBTITLE">
-		<text>Votre Jeux</text>
+		<text>جهاز ألعاب</text>
 	</loctext>
 	<loctext id="STATS_TABLE_NUMBER">
-		<text>Non.</text>
+		<text>لا.</text>
 	</loctext>
 	<loctext id="STATS_TABLE_DATE">
-		<text>Date</text>
+		<text>تاريخ</text>
 	</loctext>
 	<loctext id="STATS_TABLE_SCORE">
-		<text>Temps</text>
+		<text>الوقت</text>
 	</loctext>
 	<loctext id="STATS_TABLE_FLIPS">
-		<text>Nombre d'essais</text>
+		<text>عدد محاولات</text>
 	</loctext>
 	<loctext id="GAME_OVER_SCORE">
-		<text>Votre temps nécessaire</text>
+		<text>الوقت الخاص بك</text>
 	</loctext>
 	<loctext id="GAME_OVER_TEXT">
-		<text>Congratulations!</text>
+		<text>تهانينا!</text>
 	</loctext>
 </language>
