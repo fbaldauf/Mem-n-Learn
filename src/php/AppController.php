@@ -74,7 +74,7 @@ class AppController {
 		$view = new View();
 		$view->setTemplate('dashboard');
 		$view->assign ( 'username', isset ( $_SESSION ['username'] ) ? $_SESSION ['username'] : '' );
-		//$view->assign('devErrors', $this->checkLocale());
+		$view->assign('devErrors', $this->checkLocale());
 		return $this->renderView($view);
 	}
 	
