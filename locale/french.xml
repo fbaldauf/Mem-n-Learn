@@ -1,4 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language id="FRENCH">
-	
+<language id="GERMAN">
+	<loctext id="MENU_NEW_GAME">
+		<text>Nouveau jeu</text>
+	</loctext>
+	<loctext id="MENU_USER_STATS">
+		<text>Statistiques</text>
+	</loctext>
+	<loctext id="MENU_LOGOUT">
+		<text>Logout</text>
+	</loctext>
+	<loctext id="DASHBOARD_TITLE">
+		<text>Dashboard</text>
+	</loctext>
+	<loctext id="WELCOME">
+		<text>Bienvenue %s</text>
+	</loctext>
+	<loctext id="SELECT_LANGUAGE">
+		<text>Choisissez la langue</text>
+	</loctext>
+	<loctext id="CURRENT_LANGUAGE">
+		<text>Votre langue actuelle est</text>
+	</loctext>
+	<loctext id="GAME_TITLE">
+		<text>Memory</text>
+	</loctext>
+	<loctext id="GAME_TIME_PAUSED">
+		<text>Temps d'arrêt</text>
+	</loctext>
+	<loctext id="GAME_REPEAT_WORD">
+		<text>S'il vous plaît répéter:</text>
+	</loctext>
+	<loctext id="GAME_REPEAT_CLOSE">
+		<text>Fermer</text>
+	</loctext>
+	<loctext id="SOUND_MUTE">
+		<text>Mute</text>
+	</loctext>
+	<loctext id="ELAPSED_TIME">
+		<text>Le temps écoulé</text>
+	</loctext>
+	<loctext id="STATS_TITLE">
+		<text>Ce sont les résultats d' %s!</text>
+	</loctext>
+	<loctext id="STATS_FAST">
+		<text>Votre résultat le plus rapide</text>
+	</loctext>
+	<loctext id="STATS_GAMECOUNT">
+		<text>Jeux numériques</text>
+	</loctext>
+	<loctext id="STATS_DOWNLOAD">
+		<text>Télécharger PDF</text>
+	</loctext>
+	<loctext id="STATS_SUBTITLE">
+		<text>Votre Jeux</text>
+	</loctext>
+	<loctext id="STATS_TABLE_NUMBER">
+		<text>Non.</text>
+	</loctext>
+	<loctext id="STATS_TABLE_DATE">
+		<text>Date</text>
+	</loctext>
+	<loctext id="STATS_TABLE_SCORE">
+		<text>Temps</text>
+	</loctext>
+	<loctext id="STATS_TABLE_FLIPS">
+		<text>Nombre d'essais</text>
+	</loctext>
+	<loctext id="GAME_OVER_SCORE">
+		<text>Votre temps nécessaire</text>
+	</loctext>
+	<loctext id="GAME_OVER_TEXT">
+		<text>Congratulations!</text>
+	</loctext>
 </language>
