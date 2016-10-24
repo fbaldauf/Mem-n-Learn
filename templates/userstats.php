@@ -44,5 +44,10 @@
 	<div class="col-lg-1"></div>
 </div>
 <script>
-initChart({data: <?php echo json_encode($this->_['data']); ?>});
+initChart({
+	data: <?php echo json_encode($this->_['data']); ?>,
+	title: '<?php echo $this->_('CHART_TITLE'); ?>',
+	unit: '<?php echo $this->_('CHART_UNIT'); ?>',
+	user: '<?php echo ucfirst($this->_['username']); ?>'
+});
 </script>
