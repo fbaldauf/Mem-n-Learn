@@ -45,6 +45,7 @@ var game = {
 			// Beim ersten holen das Event binden
 			game.data.modal.on('hidden.bs.modal', function(e) {
 				game.resumeTimer();
+				game.checkEnd();
 			});
 		}
 		return game.data.modal;
@@ -61,6 +62,7 @@ var game = {
 		}, 1000);
 	},
 	pauseTimer : function() {
+		console.log("pausieren");
 		if (game.data.timer != null) {
 			clearInterval(game.data.timer);
 		}
@@ -132,7 +134,6 @@ var game = {
 					img.src = data.card.image;
 					var modal = game.getDialog();
 
-					console.log(modal);
 					modal.find('.modal-body .image').html(img);
 					modal.find('.modal-body .word').html(data.card.word);
 					modal.modal('show');
@@ -182,6 +183,8 @@ var game = {
 	checkEnd : function() {
 		// Prüft, ob das Spiel beendet wurde
 		if (game.data.cards.length * 2 == game.data.completed.length) {
+			game.pauseTimer();
+			
 			// Ergebnisse speichern
 			game.saveResults();
 
@@ -223,7 +226,6 @@ var game = {
 		if ($.inArray(tile, game.data.completed) < 0) {
 			game.data.completed.push(tile);
 		}
-		game.checkEnd();
 	}
 };
 
