@@ -50,7 +50,7 @@
 $(document).ready(function() {
 	initChart({
 		data: <?php echo json_encode($this->_['data']); ?>,
-		title: '<?php echo $this->_('CHART_TITLE'); ?>',
+		title: '<?php echo str_replace("'", "\'", $this->_('CHART_TITLE')); ?>',
 		unit: '<?php echo $this->_('CHART_UNIT'); ?>',
 		user: '<?php echo ucfirst($this->_['username']); ?>'
 	});

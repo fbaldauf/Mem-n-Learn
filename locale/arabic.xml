@@ -108,4 +108,13 @@
 	<loctext id="GAME_OVER_TEXT">
 		<text>تهانينا!</text>
 	</loctext>
+	<loctext id="CHART_TITLE">
+		<text>قدم التعلم</text>
+	</loctext>
+	<loctext id="CHART_UNIT">
+		<text>دقيقة</text>
+	</loctext>
+	<loctext id="GAME_FLIPS">
+		<text>عدد المحاولات</text>
+	</loctext>
 </language>

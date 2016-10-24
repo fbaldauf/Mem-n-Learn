@@ -112,4 +112,10 @@
 	<loctext id="GAME_OVER_TEXT">
 		<text>Congratulations!</text>
 	</loctext>
+	<loctext id="CHART_TITLE">
+		<text>Progression de l'apprentissage</text>
+	</loctext>
+	<loctext id="CHART_UNIT">
+		<text>Minutes</text>
+	</loctext>
 </language>
