@@ -112,6 +112,7 @@
 		<image>pommes.png</image>
 		<translations>
 			<german>Pommes</german>
+		</translations>
 	</card>
 	<card>
 		<image>rucksack.png</image>
@@ -180,7 +181,6 @@
 		</translations>
 	</card>
 	<card>
-
 		<image>uhr.png</image>
 		<translations>
 			<german>Uhr</german>
@@ -191,7 +191,6 @@
 		<translations>
 			<german>Vogel</german>
 		</translations>
-
 	</card>
 	<card>
 		<image>zeitung.png</image>
@@ -199,7 +198,6 @@
 			<german>Zeitung</german>
 		</translations>
 	</card>
-
 	<card>
 		<image>apfel.png</image>
 		<translations>
