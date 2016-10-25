@@ -1,203 +1,491 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cards>
 	<card>
+
 		<image>Auto.png</image>
 		<translations>
+
 			<german>Auto</german>
+
+			<english>Car</english>
+			<french>Automobile</french>
+			<pashto>موټر</pashto>
 		</translations>
+
 	</card>
 	<card>
+
 		<image>baum.png</image>
+
 		<translations>
+
 			<german>Baum</german>
+
+			<english>Tree</english>
+			<french>Arbre</french>
+			<pashto>ونې</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>blume.png</image>
+
 		<translations>
+
 			<german>Blume</german>
+
+			<english>Flower</english>
+			<french>Fleur</french>
+			<pashto>ګل</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>brille.png</image>
+
 		<translations>
+
 			<german>Brille</german>
+
+			<english>Glasses</english>
+			<french>Lunettes</french>
+			<pashto>عينکې</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>buecher.png</image>
+
 		<translations>
+
 			<german>Bücher</german>
+
+			<english>Books</english>
+			<french>Livres</french>
+			<pashto>کتابونه</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>bus.png</image>
+
 		<translations>
+
 			<german>Bus</german>
+
+			<english>bus</english>
+			<french>Bus</french>
+			<pashto>بس</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>fabrik.png</image>
+
 		<translations>
+
 			<german>Fabrik</german>
+
+			<english>Factory</english>
+			<french>Fabrique</french>
+			<pashto>فابريکه</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>fahrrad.png</image>
+
 		<translations>
+
 			<german>Fahrrad</german>
+
+			<english>Bicycle</english>
+			<french>Bicyclette</french>
+			<pashto>بايسکل</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>fussball.png</image>
+
 		<translations>
+
 			<german>Fußball</german>
+
+			<english>Football</english>
+			<french>Foot</french>
+			<pashto>د فوټبال</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>gabel.png</image>
+
 		<translations>
+
 			<german>Gabel</german>
+
+			<english>Fork</english>
+			<french>Fourchette</french>
+			<pashto>ښاخۍ</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>gitarre.png</image>
+
 		<translations>
+
 			<german>Gitarre</german>
+
+			<english>Guitar</english>
+			<french>Guitare</french>
+			<pashto>ګيتار</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>haus.png</image>
+
 		<translations>
+
 			<german>Haus</german>
+
+			<english>House</english>
+			<french>Maison</french>
+			<pashto>کور</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>hund.png</image>
+
 		<translations>
+
 			<german>Hund</german>
+
+			<english>Dog</english>
+			<french>Chien</french>
+			<pashto>سپی</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>katze.png</image>
+
 		<translations>
+
 			<german>Katze</german>
+
+			<english>Cat</english>
+			<french>Chat</french>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>laptop.png</image>
+
 		<translations>
+
 			<german>Laptop</german>
+
+			<english>Laptop</english>
+			<french>Laptop</french>
+			<pashto>لپ ټاپ</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>loeffel.png</image>
+
 		<translations>
+
 			<german>Löffel</german>
+
+			<english>Spoon</english>
+			<french>Cuiller</french>
+			<pashto>کاشوغه</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>messer.png</image>
+
 		<translations>
+
 			<german>Messer</german>
+
+			<english>Knife</english>
+			<french>Couteau</french>
+			<pashto>چاقو</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>pizza.png</image>
+
 		<translations>
+
 			<german>Pizza</german>
+
+			<english>Pizza</english>
+			<french>Pizza</french>
+			<pashto>pizza</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>pommes.png</image>
+
 		<translations>
+
 			<german>Pommes</german>
+
+			<english>Fries</english>
+			<french>Frites</french>
+			<pashto>Fries</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>rucksack.png</image>
+
 		<translations>
+
 			<german>Rucksack</german>
+
+			<english>Backpack</english>
+			<french>Rucksac</french>
+			<pashto>او اوردن</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>schluessel.png</image>
+
 		<translations>
+
 			<german>Schlüssel</german>
+
+			<english>Key</english>
+			<french>Clé</french>
+			<pashto>کلیدي</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>schokolade.png</image>
+
 		<translations>
+
 			<german>Schokolade</german>
+
+			<english>Chocolate</english>
+			<french>Chocolat</french>
+			<pashto>چاکلېټو</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>schuhe.png</image>
+
 		<translations>
+
 			<german>Schuhe</german>
+
+			<english>Shoes</english>
+			<french>Chaussures</french>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>skateboard.png</image>
+
 		<translations>
+
 			<german>Skateboard</german>
+
+			<english>Skateboard</english>
+			<french>Skateboard</french>
+			<pashto>بوټان</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>stift.png</image>
+
 		<translations>
+
 			<german>Stift</german>
+
+			<english>Pencil</english>
+			<french>Stylo</french>
+			<pashto>پنسل</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>Stuhl.png</image>
+
 		<translations>
+
 			<german>Stuhl</german>
+
+			<english>Chair</english>
+			<french>Chaise</french>
+			<pashto>مشرې</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>taschenlampe.png</image>
+
 		<translations>
+
 			<german>Taschenlampe</german>
+
+			<english>Flashlight</english>
+			<french>Torche</french>
+			<pashto>فلش</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>telefon.png</image>
+
 		<translations>
+
 			<german>Telefon</german>
+
+			<english>Telephone</english>
+			<french>Appareil</french>
+			<pashto>د تليفون</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>tisch.png</image>
+
 		<translations>
+
 			<german>Tisch</german>
+
+			<english>Table</english>
+			<french>Table</french>
+			<pashto>جدول</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>trompete.png</image>
+
 		<translations>
+
 			<german>Trompete</german>
+
+			<english>Trumpet</english>
+			<french>Trompette</french>
+			<pashto>شپيلۍ</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>uhr.png</image>
+
 		<translations>
+
 			<german>Uhr</german>
+
+			<english>Clock</english>
+			<french>Montre</french>
+			<pashto>ساعت</pashto>
+
 		</translations>
+
 	</card>
 	<card>
+
 		<image>vogel.png</image>
+
 		<translations>
+
 			<german>Vogel</german>
+
+			<english>Bird</english>
+			<french>Aviaire</french>
+			<pashto>د مرغانو د</pashto>
+
 		</translations>
+
 	</card>
 	<card>
 		<image>zeitung.png</image>
 		<translations>
 			<german>Zeitung</german>
+			<english>Newspaper</english>
+			<french>Journal</french>
+			<pashto>ورځپاڼې</pashto>
 		</translations>
 	</card>
+
 	<card>
 		<image>apfel.png</image>
 		<translations>
