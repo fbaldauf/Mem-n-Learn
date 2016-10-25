@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//DE">
 <html>
 <head>
+<link rel="icon" href="templates/img/favicon.ico" type="image/x-icon" />
 <title>Mem'n'Learn</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8"> 
