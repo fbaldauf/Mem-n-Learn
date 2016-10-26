@@ -9,11 +9,11 @@
 	<loctext id="MENU_LOGOUT">
 		<text>Logout</text>
 	</loctext>
-	<loctext id="GAME_FLIPS">
-		<text>Number of attempts</text>
-	</loctext>
 	<loctext id="DASHBOARD_TITLE">
 		<text>Dashboard</text>
+	</loctext>
+		<loctext id="GAME_FLIPS">
+		<text>Number of attempts</text>
 	</loctext>
 	<loctext id="WELCOME">
 		<text>Welcome %s</text>
