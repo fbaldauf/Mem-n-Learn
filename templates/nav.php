@@ -10,11 +10,9 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-<<<<<<< HEAD
+
 				<a class="navbar-brand" href="."><img src="templates/img/logo.png" alt="" style="display:inline; margin-top: -3px;" /> Mem-n-Learn</a>
-=======
-				<a class="navbar-brand" href="index">Mem-n-Learn</a>
->>>>>>> origin/master
+
 			</div>
 
 
