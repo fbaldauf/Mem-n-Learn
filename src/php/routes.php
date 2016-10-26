@@ -1,9 +1,14 @@
 <?php
 return array (
 		'index' => [ 
-				'route' => '/',
+				'route' => "/",
 				'controller' => 'AppController',
 				'action' => 'index' 
+		],
+		'index2' => [
+				'route' => "/index",
+				'controller' => 'AppController',
+				'action' => 'index'
 		],
 		'new-game' => [ 
 				'route' => '/new-game',

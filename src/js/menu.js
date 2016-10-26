@@ -30,8 +30,12 @@ var menu = {
 						event.preventDefault();
 
 						// Rufe showItem mit dem geklickten link auf
-						menu.showItem($(event.currentTarget).find('[href]')
-								.attr('href'));
+						var target = $(event.currentTarget).attr('href');
+						if (target == undefined)
+							target = $(event.currentTarget).find('[href]')
+									.attr('href');
+
+						menu.showItem(target);
 					});
 		});
 	},
@@ -40,21 +44,22 @@ var menu = {
 	 * Event-Handler für das Klicken auf ein Menüelement
 	 */
 	showItem : function(target) {
+		console.log(target);
 		switch (target) {
 		case '#':
 			// Nichts unternehmen
 			break;
-			
+
 		case 'new-game':
 			menu.newGame();
 			break;
-			
+
 		case 'logout':
 			menu.setActive(false);
 			// GET request ausführen
 			$.get(target, null, menu.switchPage);
 			break;
-			
+
 		default:
 			$.get(target, null, menu.switchPage);
 		}

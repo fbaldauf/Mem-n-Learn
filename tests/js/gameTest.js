@@ -61,8 +61,4 @@ QUnit.test("set openCards on click", function(assert) {
 
 });
 
-// QUnit.test("mute", function(assert) {
-// var current = game.muted();
-// game.toggleMute();
-// assert.notEquals(current, game.muted());
-// });
+
