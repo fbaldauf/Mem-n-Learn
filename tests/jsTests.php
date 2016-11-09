@@ -10,6 +10,7 @@
 <script src="../includes/jQuery/jquery-3.1.js" type="text/javascript"></script>
 <script src="../includes/jQuery/jquery.flip.min.js"
 	type="text/javascript"></script>
+<script src="../includes/bootstrap/js/bootstrap.js" type="text/javascript"></script>
 
 <script src="../src/js/game.js"></script>
 

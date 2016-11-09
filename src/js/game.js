@@ -43,6 +43,7 @@ var game = {
 		game.data.turn = 0;
 		game.components.winTimer = [];
 		game.components.modal = null;
+		game.components.timer = null;
 
 		// Karten dem Spielfeld hinzufügen
 		game.addCards();
