@@ -46,13 +46,6 @@ class AppController {
 	 * @param Array $request Array aus $_GET & $_POST.
 	 */
 	public function __construct($request) {
-		if ($_SERVER['SERVER_NAME'] === 'julian1828.bplaced.net') {
-			// Für den BPlaced-Webspace müssen die Verbindungsdaten für die Datenbank angepasst werden
-			// TODO: Herausnehmen....
-			$this->dbuser = 'julian1828';
-			$this->dbpassword = '14dwf1_mem';
-		}
-
 		$this->view = new View();
 		$this->request = $request;
 		// Wenn eine View durch den Request angegeben wurde, den Standard "main" nutzen
