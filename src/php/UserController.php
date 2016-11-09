@@ -308,7 +308,7 @@ class UserController extends AppController {
 			return;
 		}
 		
-		if (substr ( $pdfdata, 0, 6 ) == '<html>') {
+		if (is_array($pdfdata) AND $pdfdata ['status'] == 'err') {
 			// Fehler beim Generieren des PDF-Dokumentes
 			echo ($pdfdata);
 			echo '<a href="statistic">Zurück</a>';
