@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//DE">
+<!DOCTYPE html>
 <html>
 <head>
 <link rel="icon" href="templates/img/favicon.ico" type="image/x-icon" />
